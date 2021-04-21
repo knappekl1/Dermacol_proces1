@@ -1,0 +1,5 @@
+{"orchestratorPath":"Shared",
+    "bucketName":"Helios_bucket",
+"configFolder":"Data",
+"credential":"Helios_credential",
+"heliosDatabaseAsset":"Helios_DB"}
