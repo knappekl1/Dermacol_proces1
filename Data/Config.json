@@ -2,4 +2,8 @@
     "bucketName":"Helios_bucket",
 "configFolder":"Data",
 "credential":"Helios_credential",
-"heliosDatabaseAsset":"Helios_DB"}
+"heliosDatabaseAsset":"Helios_DB",
+"keyWordColumn":"Code",
+"priceColumn1":"Billing price TOTAL",
+"priceColumn2":"Price Total",
+"orderColumn":"Order"}

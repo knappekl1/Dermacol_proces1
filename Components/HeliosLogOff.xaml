@@ -1,0 +1,126 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="HeliosLogOff" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="2127.33333333333,1278.66666666667" sap2010:WorkflowViewState.IdRef="HeliosLogOff_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="HeliosLogOff" sap:VirtualizedContainerService.HintSize="798,1214" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Application: HELIOS Green - DermacolTestRPA - Knappek Libor" sap:VirtualizedContainerService.HintSize="756,1122" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="722,827.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ReportStatus DisplayName="Report Status" sap:VirtualizedContainerService.HintSize="680,68" sap2010:WorkflowViewState.IdRef="ReportStatus_1" StatusText="[&quot;Odhlašuji...&quot;]" />
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Odhlásit'" sap:VirtualizedContainerService.HintSize="680,626" sap2010:WorkflowViewState.IdRef="NCheckState_1">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,396" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Odhlásit'" sap:VirtualizedContainerService.HintSize="334,168" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="3781, 53, 59, 59" ElementType="Button" FriendlyName="'Odhlásit'" FullSelectorArgument="&lt;wnd ctrlname='Toolbars_Dock_Area_Top' idx='2' /&gt;&lt;ctrl name='DockTop' role='grouping' /&gt;&lt;ctrl name='Toolbar' role='tool bar' /&gt;&lt;ctrl name='Odhlásit' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Toolbars_Dock_Area_Top' /&gt;&lt;ctrl name='DockTop' role='grouping' /&gt;&lt;ctrl name='Toolbar' role='tool bar' /&gt;&lt;ctrl name='Odhlásit' role='push button' automationid='' check:text='Odhlásit' /&gt;" ImageBase64="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" InformativeScreenshot="4f3535da057bf3541dad9e8f9d401680.png" ScopeSelectorArgument="&lt;wnd app='noriswin32.exe' ctrlname='WDesktop' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Logged off.&quot;]" />
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,86" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="3781, 53, 59, 59" ElementType="Button" FriendlyName="'Odhlásit'" FullSelectorArgument="&lt;wnd ctrlname='Toolbars_Dock_Area_Top' /&gt;&lt;ctrl name='DockTop' role='grouping' /&gt;&lt;ctrl name='Toolbar' role='tool bar' /&gt;&lt;ctrl name='Odhlásit' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Toolbars_Dock_Area_Top' /&gt;&lt;ctrl name='DockTop' role='grouping' /&gt;&lt;ctrl name='Toolbar' role='tool bar' /&gt;&lt;ctrl name='Odhlásit' role='push button' automationid='' check:text='Odhlásit' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD8AAAA/CAYAAABXXxDfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAA3SSURBVGhD7Zp5cJTlHceZaf9pq6AihyCHAUICCfeNgBweBAWtdpzp2NrROiNWpQwWkWi9KEc7lSOBHJuL3Hcg4ZaKHCKKCqIoKCSBHLvZ3Xfv3ez97fd5diNBQ7jeaBx8Zr7z7mbffZ/n8zy/c6ELFm7Djapf4G9UqQYfeL4SzUsLYV2+Dkr8MuoFGJc/16mkxC+CKf4VWOLXofmlPHXgBbjnpUIYV65B/dqnUZM4A7WJsahNiA4r6qdXIteROArnEmaibt1TUN5erQ5889IiKP/6D86vnQ5d5hTYyuPg3DoPrkpKXKXifjqJdVDOygdhK5uLpqypqE+Yrw68bfkGNKx9Bk0CvGwGfDvnI7B9HhXXQRLPvpbnPwgvv+fYMgfajKnqwCvxy2lSs+Su+nY8BOyktswCKu7hVUWJ57Wltu5trZb7ts4Gts8F9j4OpWCiOvDG+MX083Fw0Lz93Fk5Sdk06u7rU7kQn1M+XV6DpVMRLJmMQPFEaoJ8HbovfM+VzLllJrDnMZiLpqgF/yLhR4bgt8WFJijlRFwsyq5WFxYa5Ht/0Xi480fCmTMcDsqeEwtb7kgp8Vr83UV5C0YjUDKp1ffbejZVMQPY/SgsxWrBLyd8goCPC8PT5MUCJPwFmKtRoHQKfEUT4MobCWt2LJTsUTDmT4GxeDYMdC9DWRxfz+LfJsGUPUJuhDt/NPzcALFpbT1Twgs36LTwNHVh3q7cGJjSI2DIHQ/Tjr/AdvQdOL8ph7tuPzy6T+FpOsbXB+E8XQLrB29AqVgAQ2YUbJmD4aEVtO0GnRxemK4zZxgseeOgbHkYto//DdeZKnj0J+CzNyDgtiDoc1FuBJoV+CzVcDcegeNkLiz7X4ZSPJMuMUq6itjEizeg08JPI/hkuAvGwJgxGMatj8J2PBl+ez0Q8OG7EQwQvBl+RyN8yin4DCfgt52T7z36z2E6GM8NmA1L5hDpNqENaJmjs8LTTN30b0tWNIzl82H/IgN+px5Bv0cQh8A5gl4nvMaTsB1+C6bKP8BI/7e+vwTu2t20CjO8pm9gPbKS7sLsIwJh4dhQNpDzdEL4ICXMXQQtEdRsnybAY/gyjHvx8JlOw3lCA0PhDOhS+0OX3Af6LGaAw69zU75EwGNF87n/wbxvMUw5oxg7YlvN9aPAM9WJya4IPpS/PfkjYKafG7b9EV76d9DvDuNePNzn98GydyG0m3qgcd1voE3ohob//grK1kfQfGarPH2/UwfX2W3Qc4Ns2THc2ImcR6yFEsVOx8DPJTwrqIpWef5y4gYEinnqmREwV8TByqjutzfSvi+YeuvhPv8+4Z8nfM8wfFfC/5rwj6KZwDIgBrzwMh4ou56GNX8iPHmxLIimhOFFnv+9uvDVEv4Bwj+AIHc3yDwtJpTXdjWVgWk8zGn9Yd75JJxhgEsNH33ayXgg8r0ubZA0fX3OGNg+fAs+xgIRDMUQG2g5/CYspXPgzBoiN1hsdrCCKXD3I4SfrCb8CDYM98O37X45QaCUZSj9WF4vIxGUjJr+sLz3dxmxRSq71BCf+UynYP9oNUzbn2B+nw/roXjpDtJVwhbjd+mZLVJg3sLP0/vDL8phbnaggsFv9wKYWSKrD191H4KM3CJtSfjLimbJ9GbQDIDlwDJ4zWcu6e9yhFNdwKGVqc5r+Jyp7jyCHttFruJ3GWH7IgvmrTTxtH4sk8cRnmsS/cKu+R0AX3Ef4e/lBMzZsvmgCNeueCIelqUGcfL7l8pU1S58qxFk/pepsI340HLyJnHyAp7WJTdb+L2AL+oI+Mo5cgJhZqIpkdf2xHs8+azbU++k2S9i2XqcJ+sMI1z78NMyLMI1Su+FLWNACJ7zBcoYZ9hymwsnqAxffi98bGdFUyLBaWqX13h2ZKOgpPSRAc9VvYsBzxpGuPbhs56D8u5zMDHauzYPIfwYwo/j2tj47JhH+PHqwtvL58DLAsdPf/dxp69EYgMEvIXRXpyS5aM1oZKWvn2tQxQ67vpD0LPzM28eBnfucM41hlmFcwpX28G/F45TF95WNhse5ngffd3LIOalL8tre+IGCLO3ZQyEMYe+v+uvIb8P+sMoVzuCMsfbjiehaTPL5YyI8DrCoun7ts+FUjBWTfhYWAnvZo73sqEQQUxAtSevEBfkZglqSu4FQx578/3LaLI11wgflN9znCqGnv2Bkj4YjqxI+DhHy3q8tDQfaxH14UtnwV0+gxMwiLFJaVdsOQV8M9tX0YPr0yNhenchXDWhBqWtCN7uILRIb67aPTDt/Rv0GVGws7gRzxfziPnkvMLdWIsotDqV4WcSflrIlPNGwMMTlddLig0JzdKYFsGTegj2rwsuKlR+MEQcEBYRlihjRdETaDbTWmplQ2Pc86ys+BRakgD//nyewtEyHSu0BNXgz26IZSk5A81Mc+KXFHdujAw0oWsr5cRwU0KfOVjPi8pOlzsZjq/y4bPUtgse9NhlJmiRj4FR/KLjOFUC04HlaCqdi6b0ITCn38UIH8l5hofnahHfF9DiKmdDyRulDrxBwsfAUjKd8FPgZvR2c9fFzretaPriEBiFnxfdA/MHb8ogdamyVvxiI366sn22ib36aliZv63MCpZD/4SZTY6y9TEYxO97BBdZw5E5SM4j1vD9dbjZPXq2zoKRLqAqvLlkGlwsIcUEArA5Oyp0pVxhhcAHs5EZgMbUgVD2LYG76TP5I0Vo8ORbmXWAp+1uOAzLhyuhzR6HxpSB0GruoiKgTb4TOnZ3+o23yYBpZ8Zozh7a5pwhcT35sXCzpzfmqg5/N5ylLCryYuDiIpzZkZS4DpXvXfI9A1tqb2hT+sG4+xl2cdtD4C15ndAiT4ug53M0wsUWVnlvMRoZwEQVaNb0gzXjLmqgvIpW2JE1CM7Ng/nsIXKO0NxtiZ/l0RW3TIeB8UhVeFPxVDhKxsOZO4yLGRJakLyGJBZp1vRmZB+MprJ5cJwug49NScsIeh00/9OwHtsE85GVdIfXYWRPrs+fBH1yT9bodxJ2IJ8jgFtBi+cTvPVcbYv35tIC2NkZGAPUhS+aAgfzqJPmJRYmAppcYPi1aC11G29FE3txs/jRwqkjsTDzUBT3WqphP5mLxpzxqE/qi4ZkamN3GAQ4v+vc3ALbWny2eP4VKYJro1uUT4UhZ7h68Gc2DIepcDLsRWPgoIkJc7RnXjBLi6YP9Ek90JARDfOHKwjKQoYdmZDwa2Hqjm8qoN/+Z/pyXxiSujMu0MwpAd7yrB9K/P3K5RCmz6BsYPBTGX4S7MyjdpqgCD52dlNCwlzF6WlZyIgAJ/xYggf8cGs/hvWzRGnm+u1PQMuS1JDcG2bGBVtGf6nQc8TzKJr9tYvPobW4yuhG2dHqwiuFE2ErHMkJBsHG07KlMzil94Ux6TboGKF1LDmb6w7IooR2TngfrMdTUZ89FnVJfVCfyPsYuc2avvL79jB86Fnh19elflwbTb9sAuGjVIRfT/iCCbAxldiyGI0JLkxd4YnXr/8d9BWPwPF1Efts+jlPPBThgjz1jahPj2LK6s5N6s7v3CEtpWPETaUFOErGsekZqi68MX8crPkxsNK8rGkET7oduqRe0ObfDcvRtazgQn4uuXn12epgOvgq6jfdQR/niaf0kN/rOHFjM1kEFY8lfKSa8MMIPxaWvGHMv+LUe6EpsSvqUwbAxErMrT0qoUMjSNM3wSF+W696nJZxEy3kdvp5L36vdweqF9fGdFk8GjpWmKrCG/LGwJIbBQv93JzCU994CxoYwJxnd7DjMoTBic7KzcNytmnn0yxeIqFL+C1MvN+c2rOD1YNr68OMNJLwg9WGHwVzbiQnuIMwt0G7sRvhR8NZsyf0726+ZimP8SQDXYr8TMsAZ0zqyvuZ2lLFBnSkOEc6s0hhLOEjVIKPF/DRhB9JeHZVab1oxrdAK8w+PVpWbK5z+2j6n0hZ2aDoKh6W0b2Jp27mRonN6njdClMaC6bC4dAy56sHvyEaesKbcgbBpOnBYHcLzfkm1CXcirqsEajPm4yG/GlS9RnDUMeGRJd4Mwybbpb3Chk7XN2g0AIs+cOgZV+gCrwx/h84u57pI0fA8+Qz+kLhTus3daVZd2WJSt+nebeokRahTbyJEb4b21qChyVed6TEmkxpDHwFMWhIH6gOvDn+bdSui2PwimXZSPicCCj0LUXTU8rI3TbQpw2cXEi8N8rP6B5Sofs6XCIWZQ2Akj8cdakq+bzjlUxo/7MUNesjUZ/Wj74fDSUv6nsa2krf/+zHEuNS7lDGof6oSVTpNzzv4jLYXktG45oncT5hNneV5WpqFDWkk4mxJmUs1zgL2jXPqAMv5H9xC6xvZEG7chlqVy9Azaop1PhOpdpV03B+1QJoV70M26sa9eCDz1XJDfAuKoBnUSbcizRUSieTRq5NrNH/QoV68D9H/QJ/o+rGhq99dgtuVHX501NZuFHV5fk3MtAZtSJpO1LLPsGmkqPYWHyx3sk5iCWr8tr83tWoS1JSEjqTNBoNCgoKcPLkSQSCQbjcATia/d9JsThxpvo8Kquq5H3Xoy5LlixBZ9KKFStw+PBhGAyGNuE//+IrVFVtw8GDh3DkyJHrUpfKhe+gM2nPa2n49thJWK3Wi+AViwMnvvwa+w8cxL59+1BTUwOtVntd6nSpzvvaXuiOffsD+EadgvKKCuzduxfV1dVwu6/s/+q1N3528EePHpXgQX52fQP4P5Ohq4TVOfrrAAAAAElFTkSuQmCC" InformativeScreenshot="ba36a4268b1a458c3846ce69574d5852.png" ScopeSelectorArgument="&lt;wnd app='noriswin32.exe' ctrlname='WDesktop' /&gt;" SearchSteps="Selector, FuzzySelector" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-12, -12, 3864, 2124" FilePath="C:\ProgramData\Asseco Solutions\NorisWin32Clients\HELIOS\noriswin32.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAKmSURBVFhH1ddJaBNRGMDxRCrioR5q7UarVK1xSi/iWqEUQQ+i1LihEMUodUGstqBCoVBExHhocAM9abFFPHkSBEkhKmLx4FJbRNwQwQoWUZSqVFv/H77Ul2ESJ5OJgw9+hyTvW96bJTO+VGNF3Tl/1ZWgX310PCSH5FIf7Y/AtY0zCF65Iz7guAmJlRySS31lfxBYi+fowXqSTN7V9/KvzcgcmSsxKlZy1Kqf7Q8JUsE/8Q4ROytROxdRMRKbdQNjmo9owSyM78ay6qhstXwnv8kcPcbVBsRn3EY9q50oxedcXbdYfSe/mee73kDCd1zHIkyDbPtTjEKfl7MGhBR7gmMoxBLcgDSXmOOsAbZ3JoGd+ArzqqzI6vejBMtxB1/wDJk3cHxPlVxOxQS34jWsiuqkSSnYjaWYjYO4j8wbkNFuxCb0BZrKD+/bWhy4HDxJohewsxs/cBpyfhSykCkqpf0xXNaa/7a0JYzYq+kH2o5uD0+tubS2joQ3MQKrwjo5DwYQpoF8lTb9OF/T659UfqSAog3oxyjGlMfY3bm6saj+7IZVJL6HYVgV18mO9aOhOh4qkMtWlUseUvxD6aEKinRhEHpxIZ8/vSlrvhBfuHcBCQ20wW4Tg+jinlGR1AQrziNxJaIYgl40lRGcwLxgZJNhdAfPkHwIcuu1akAn86KoZEfyfCQJoUcltSqWyjc8eji3aXP7zm1FJNyCu7AqaibnkPxRhbJvwEhqoBdWBc3+NKAdgg68h1Uxs/FDsMbZIejA70OQGBmehPNJ4M5JqA87l+HFXF2G5pHmRnQLubkRmUeWt+JTcH4rdvHP6AH+w79jCYJ3DyQSpIL1gjrPHsk8fShN91gu50wzXH8s9/zFJJtXs5jKkXkDaiXevZz+m9dzn+8XCVmKseuzft8AAAAASUVORK5CYII=" InformativeScreenshot="477e562c043356e7da3a47d2c3ecee2d.png" Selector="&lt;wnd app='noriswin32.exe' ctrlname='WDesktop'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
