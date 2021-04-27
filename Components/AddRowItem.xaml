@@ -2,11 +2,12 @@
   <x:Members>
     <x:Property Name="in_DataRow" Type="InArgument(sd:DataRow)" />
     <x:Property Name="in_ExpirationSelection" Type="InArgument(x:String)" />
+    <x:Property Name="out_note" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2127.33333333333,2942</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1103.33333333333,2989.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AddRowItem_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -84,7 +85,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AddRowItem" sap:VirtualizedContainerService.HintSize="556.666666666667,2877.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddRowItem" sap:VirtualizedContainerService.HintSize="556.666666666667,2924.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Code" />
       <Variable x:TypeArguments="x:String" Name="Order" />
@@ -100,7 +101,7 @@
         <OutArgument x:TypeArguments="x:String">[Code]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[in_DataRow.Item("code").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String">[in_DataRow.Item("Code").ToString]</InArgument>
       </Assign.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -121,12 +122,12 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <Assign sap2010:Annotation.AnnotationText="read from column and replace dot with comma (EU numbering convention) for input into table&#xA;" DisplayName="Read Billing Price" sap:VirtualizedContainerService.HintSize="514.666666666667,140.666666666667" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap2010:Annotation.AnnotationText="read from column and replace dot with comma (EU numbering convention) for input into table&#xA;&#xA;in_DataRow.Item(&quot;billing price total&quot;).ToString.Replace(&quot;.&quot;,&quot;,&quot;)&#xA;" DisplayName="Read Billing Price" sap:VirtualizedContainerService.HintSize="514.666666666667,190.666666666667" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[Price]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[in_DataRow.Item("billing price").ToString.Replace(".",",")]</InArgument>
+        <InArgument x:TypeArguments="x:String">[in_DataRow.Item("billing price total").ToString.Replace(".",",")]</InArgument>
       </Assign.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -134,13 +135,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Poptávky zákazníka-DE Export: Nový záznam" sap:VirtualizedContainerService.HintSize="514.666666666667,2293.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Poptávky zákazníka-DE Export: Nový záznam" sap:VirtualizedContainerService.HintSize="514.666666666667,2290.66666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Add Item" sap:VirtualizedContainerService.HintSize="480.666666666667,1998.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Add Item" sap:VirtualizedContainerService.HintSize="480.666666666667,1996" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="TableChildren" />
               <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
@@ -181,7 +182,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'Záhlaví  TitleBar'" FoundElement="[Element]" sap:VirtualizedContainerService.HintSize="335.333333333333,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
                     <ui:WaitUiElementAppear.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dabda7cb-bfed-4285-a45b-6b678fd72b4f" InformativeScreenshot="84ab6b1e211f16f5c359763c711a9c04" Selector="&lt;wnd ctrlname='TabGroup' /&gt;&lt;wnd ctrlname='myBrowse' /&gt;&lt;wnd ctrlname='myBrowse' /&gt;&lt;ctrl name='Číslo položky' role='column header' /&gt;" TimeoutMS="3000">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dabda7cb-bfed-4285-a45b-6b678fd72b4f" InformativeScreenshot="84ab6b1e211f16f5c359763c711a9c04" Selector="&lt;wnd ctrlname='TabGroup' /&gt;&lt;wnd ctrlname='myBrowse' /&gt;&lt;wnd ctrlname='myBrowse' /&gt;&lt;ctrl name='Číslo položky' role='column header' /&gt;" TimeoutMS="2000">
                         <ui:Target.WaitForReady>
                           <InArgument x:TypeArguments="ui:WaitForReady" />
                         </ui:Target.WaitForReady>
@@ -214,7 +215,7 @@
               </TryCatch.Catches>
             </TryCatch>
             <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="438.666666666667,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="Variant selected" />
-            <Sequence DisplayName="Process Row" sap:VirtualizedContainerService.HintSize="438.666666666667,362.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence DisplayName="Process Row" sap:VirtualizedContainerService.HintSize="438.666666666667,360" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="TargetRowSelector" />
               </Sequence.Variables>
@@ -230,12 +231,10 @@
               </ui:InvokeWorkflowFile>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ProcessLastRow workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Components\ProcessLastRow.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_Selector">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="TargetRowSelector" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_Order">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Order" />
-                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_Selector">[TargetRowSelector]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_Order">[Order]</InArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_Notes">[out_note]</OutArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_Price">[Price]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Sequence>
