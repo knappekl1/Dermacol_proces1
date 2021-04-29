@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2127.33333333333,10333.3333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2127.33333333333,10099.3333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessLastRow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -82,19 +82,19 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessLastRow" sap:VirtualizedContainerService.HintSize="1260,10268.6666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ProcessLastRow" sap:VirtualizedContainerService.HintSize="1260,10034.6666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Poptávky zákazníka-DE Export: Nový záznam" sap:VirtualizedContainerService.HintSize="1218,10176.6666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Poptávky zákazníka-DE Export: Nový záznam" sap:VirtualizedContainerService.HintSize="1218,9942.66666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1184,9882" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1184,9648" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:UiElement" Name="Element" />
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="RowElements" />
@@ -136,32 +136,32 @@
                 </ui:Target>
               </ui:FindChildren.Target>
             </ui:FindChildren>
-            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1142,1572.66666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[RowElements]">
+            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1142,1338.66666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[RowElements]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ui:UiElement">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:UiElement" Name="item" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="554.666666666667,1434.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="559.333333333333,1200.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[item.Selector.ToString.contains(&quot;Navíc k dispozici&quot;)]" DisplayName="Find Quantity selector" sap:VirtualizedContainerService.HintSize="512.666666666667,1340" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[item.Selector.ToString.contains(&quot;Navíc k dispozici&quot;)]" DisplayName="Find Quantity selector" sap:VirtualizedContainerService.HintSize="517.333333333333,1106" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Then>
-                        <Sequence DisplayName="Read and process Quantity" sap:VirtualizedContainerService.HintSize="476,1156" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence DisplayName="Read and process Quantity" sap:VirtualizedContainerService.HintSize="480.666666666667,922" sap2010:WorkflowViewState.IdRef="Sequence_5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NGetText DisplayName="Get Text Quantity" sap:VirtualizedContainerService.HintSize="434,118.666666666667" sap2010:WorkflowViewState.IdRef="NGetText_1" InUiElement="[item]">
+                          <uix:NGetText DisplayName="Get Text Quantity" sap:VirtualizedContainerService.HintSize="438.666666666667,118.666666666667" sap2010:WorkflowViewState.IdRef="NGetText_1" InUiElement="[item]">
                             <uix:NGetText.Text>
                               <OutArgument x:TypeArguments="x:String">[Text]</OutArgument>
                             </uix:NGetText.Text>
                           </uix:NGetText>
-                          <Assign sap:VirtualizedContainerService.HintSize="434,62" sap2010:WorkflowViewState.IdRef="Assign_9">
+                          <Assign sap:VirtualizedContainerService.HintSize="438.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_9">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[Text]</OutArgument>
                             </Assign.To>
@@ -169,7 +169,7 @@
                               <InArgument x:TypeArguments="x:String">[Text.Replace(" ","").Trim]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <TryCatch DisplayName="Try to parse Quantity" sap:VirtualizedContainerService.HintSize="434,534" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                          <TryCatch DisplayName="Try to parse Quantity" sap:VirtualizedContainerService.HintSize="438.666666666667,300" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                             <TryCatch.Try>
                               <Assign DisplayName="Convert Text to Int" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_15">
                                 <Assign.To>
@@ -181,10 +181,10 @@
                               </Assign>
                             </TryCatch.Try>
                             <TryCatch.Catches>
-                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,362" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
@@ -212,16 +212,16 @@
                               </Catch>
                             </TryCatch.Catches>
                           </TryCatch>
-                          <Assign DisplayName="Calculate Quantity difference" sap:VirtualizedContainerService.HintSize="434,62" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign DisplayName="Calculate Quantity difference" sap:VirtualizedContainerService.HintSize="438.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_2">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Int32">[Quantity_Diff]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
-                              <InArgument x:TypeArguments="x:Int32">[Cint(Text) - Cint(in_Order)]</InArgument>
+                              <InArgument x:TypeArguments="x:Int32">[Quantity- Cint(in_Order)]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;In Stock: &quot; + Text]" />
-                          <ui:Break sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Break_1" />
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="438.666666666667,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;In Stock: &quot; + Text]" />
+                          <ui:Break sap:VirtualizedContainerService.HintSize="438.666666666667,22" sap2010:WorkflowViewState.IdRef="Break_1" />
                         </Sequence>
                       </If.Then>
                     </If>
