@@ -76,6 +76,7 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="ReadHeliosProductTable" sap:VirtualizedContainerService.HintSize="838,4621.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -330,7 +331,7 @@
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[list(1).Trim.Equals(Code) And list(2).Trim.Equals(&quot;Aktivní&quot;)]" sap:VirtualizedContainerService.HintSize="484,698.666666666667" sap2010:WorkflowViewState.IdRef="If_8">
+                      <If Condition="[list(1).Trim.Equals(Code) And Not list(2).Trim.Equals(&quot;Zrušeno&quot;)]" sap:VirtualizedContainerService.HintSize="484,698.666666666667" sap2010:WorkflowViewState.IdRef="If_8">
                         <If.Then>
                           <Sequence DisplayName="Select Target Row" sap:VirtualizedContainerService.HintSize="376,514.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_19">
                             <sap:WorkflowViewStateService.ViewState>
