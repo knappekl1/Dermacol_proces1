@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ReadHeliosTable" this:ReadHeliosTable.in_ExpirationSelection="Bez expirace" this:ReadHeliosTable.in_Suffix="D" this:ReadHeliosTable.in_ShortCode="4148" this:ReadHeliosTable.in_Order="60" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ReadHeliosTable" this:ReadHeliosTable.in_ExpirationSelection="S Expirací" this:ReadHeliosTable.in_Suffix="C" this:ReadHeliosTable.in_ShortCode="4148" this:ReadHeliosTable.in_Order="60" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_ExpirationSelection" Type="InArgument(x:String)" />
     <x:Property Name="in_Suffix" Type="InArgument(x:String)" />
@@ -8,10 +8,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2127.33333333333,6386</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2127.33333333333,7552.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReadHeliosTable_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="62">
+    <scg:List x:TypeArguments="x:String" Capacity="32">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -83,19 +83,19 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ReadHeliosProductTable" sap:VirtualizedContainerService.HintSize="922.666666666667,6281.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ReadHeliosProductTable" sap:VirtualizedContainerService.HintSize="838,7488" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: HELIOS Green - DermacolTestRPA - Knappek Libor" sap:VirtualizedContainerService.HintSize="880.666666666667,6189.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: HELIOS Green - DermacolTestRPA - Knappek Libor" sap:VirtualizedContainerService.HintSize="796,7396" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Read Product code and Status" sap:VirtualizedContainerService.HintSize="846.666666666667,5894.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Read Product code and Status" sap:VirtualizedContainerService.HintSize="762,7101.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:UiElement" Name="TableElement" />
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="TableChildren" />
@@ -104,18 +104,15 @@
               <Variable x:TypeArguments="x:String" Name="CodeSuffix" />
               <Variable x:TypeArguments="x:Int32" Name="Order" />
               <Variable x:TypeArguments="sd:DataTable" Name="ProcessedTable" />
-              <Variable x:TypeArguments="x:Boolean" Name="pointer1">
-                <Variable.Default>
-                  <Literal x:TypeArguments="x:Boolean" />
-                </Variable.Default>
-              </Variable>
+              <Variable x:TypeArguments="x:Boolean" Default="False" Name="pointer1" />
+              <Variable x:TypeArguments="x:String" Name="TargetSelector" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element Helios  Product Table" FoundElement="[TableElement]" sap:VirtualizedContainerService.HintSize="804.666666666667,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
+            <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element Helios  Product Table" FoundElement="[TableElement]" sap:VirtualizedContainerService.HintSize="720,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
               <ui:WaitUiElementAppear.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="69d446b8-8d14-4edf-9df4-ab2afa6a00da" InformativeScreenshot="66f8a7e3bd09e1023c205dddaea35d22" Selector="&lt;wnd ctrlname='FormNew' /&gt;&lt;wnd ctrlname='TabGroup' /&gt;&lt;wnd ctrlname='myBrowse' /&gt;&lt;wnd ctrlname='myBrowse' /&gt;&lt;ctrl name='Browse' role='table' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -127,7 +124,7 @@
                 </ui:Target>
               </ui:WaitUiElementAppear.Target>
             </ui:WaitUiElementAppear>
-            <ui:FindChildren Children="[TableChildren]" DisplayName="Find all Children Elements in Table" Filter="&lt;ctrl /&gt;" sap:VirtualizedContainerService.HintSize="804.666666666667,106" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
+            <ui:FindChildren Children="[TableChildren]" DisplayName="Find all Children Elements in Table" Filter="&lt;ctrl /&gt;" sap:VirtualizedContainerService.HintSize="720,106" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
               <ui:FindChildren.Target>
                 <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[TableElement]" Id="d323ac7b-b36d-4ac5-9458-ef3f6e0eee8b" InformativeScreenshot="0a7fc96a3bd7df992b41c427dca5a6c4">
                   <ui:Target.TimeoutMS>
@@ -139,7 +136,7 @@
                 </ui:Target>
               </ui:FindChildren.Target>
             </ui:FindChildren>
-            <Assign DisplayName="Convert Order to Int" sap:VirtualizedContainerService.HintSize="804.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_12">
+            <Assign DisplayName="Convert Order to Int" sap:VirtualizedContainerService.HintSize="720,62" sap2010:WorkflowViewState.IdRef="Assign_12">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[Order]</OutArgument>
               </Assign.To>
@@ -147,7 +144,7 @@
                 <InArgument x:TypeArguments="x:Int32">[Cint(in_Order.Replace(" ","").Replace(",","."))]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign DisplayName="Initialize List" sap:VirtualizedContainerService.HintSize="804.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign DisplayName="Initialize List" sap:VirtualizedContainerService.HintSize="720,62" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="scg:List(scg:List(x:String))">[SelectorMasterList]</OutArgument>
               </Assign.To>
@@ -155,7 +152,7 @@
                 <InArgument x:TypeArguments="scg:List(scg:List(x:String))">[New List(of List(of String))]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="[i]" DisplayName="For Each Row in Table Extract Selectors" sap:VirtualizedContainerService.HintSize="804.666666666667,2985.33333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[TableChildren]">
+            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="[i]" DisplayName="For Each Row in Table Extract Selectors" sap:VirtualizedContainerService.HintSize="720,2985.33333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[TableChildren]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ui:UiElement">
                   <ActivityAction.Argument>
@@ -334,17 +331,18 @@
                 </ActivityAction>
               </ui:ForEach.Body>
             </ui:ForEach>
-            <Sequence DisplayName="Read and Process List" sap:VirtualizedContainerService.HintSize="804.666666666667,2280" sap2010:WorkflowViewState.IdRef="Sequence_13">
+            <Sequence DisplayName="Read and Process List" sap:VirtualizedContainerService.HintSize="720,3485.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_13">
               <Sequence.Variables>
                 <Variable x:TypeArguments="ui:UiElement" Name="NewElement" />
                 <Variable x:TypeArguments="x:String" Name="Code" />
+                <Variable x:TypeArguments="x:Int32" Name="OrderBalance" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[in_ExpirationSelection.Equals(&quot;S Expirací&quot;)]" sap:VirtualizedContainerService.HintSize="762.666666666667,225.333333333333" sap2010:WorkflowViewState.IdRef="If_9">
+              <If Condition="[in_ExpirationSelection.Equals(&quot;S Expirací&quot;)]" sap:VirtualizedContainerService.HintSize="641.333333333333,225.333333333333" sap2010:WorkflowViewState.IdRef="If_9">
                 <If.Then>
                   <Assign DisplayName="Add /EXP to Code" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_6">
                     <Assign.To>
@@ -366,13 +364,13 @@
                   </Assign>
                 </If.Else>
               </If>
-              <ui:ForEach x:TypeArguments="scg:List(x:String)" CurrentIndex="{x:Null}" DisplayName="For Each list" sap:VirtualizedContainerService.HintSize="762.666666666667,1522" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[SelectorMasterList]">
+              <ui:ForEach x:TypeArguments="scg:List(x:String)" CurrentIndex="{x:Null}" DisplayName="For Each list" sap:VirtualizedContainerService.HintSize="641.333333333333,1933.33333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[SelectorMasterList]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="scg:List(x:String)">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="scg:List(x:String)" Name="list" />
                     </ActivityAction.Argument>
-                    <Sequence sap2010:Annotation.AnnotationText="Order is: Code text, Status text, row selector string" DisplayName="Read Items" sap:VirtualizedContainerService.HintSize="726,1384" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                    <Sequence sap2010:Annotation.AnnotationText="Order is: Code text, Status text, row selector string" DisplayName="Read Items" sap:VirtualizedContainerService.HintSize="604.666666666667,1795.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_14">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Int32" Name="InventoryDiff" />
                       </Sequence.Variables>
@@ -382,7 +380,7 @@
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Calc Inventory Diff" sap:VirtualizedContainerService.HintSize="684,62" sap2010:WorkflowViewState.IdRef="Assign_14">
+                      <Assign DisplayName="Calc Inventory Diff" sap:VirtualizedContainerService.HintSize="562.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_14">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[InventoryDiff]</OutArgument>
                         </Assign.To>
@@ -390,91 +388,215 @@
                           <InArgument x:TypeArguments="x:Int32">[Cint(list(2)) - Order]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <If Condition="[list(3).Trim.Contains(&quot;Zrušen&quot;)]" DisplayName="If Zrušen, Ignore" sap:VirtualizedContainerService.HintSize="684,244" sap2010:WorkflowViewState.IdRef="If_11">
+                      <If Condition="[list(3).Trim.Contains(&quot;Zrušen&quot;)]" DisplayName="If Zrušen, Ignore" sap:VirtualizedContainerService.HintSize="562.666666666667,244" sap2010:WorkflowViewState.IdRef="If_11">
                         <If.Then>
                           <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
                         </If.Then>
                       </If>
-                      <If sap2010:Annotation.AnnotationText="If Exact match for Variant with sufficient inventory found, it is processed and ends" Condition="[list(1).Trim.Equals(Code) And InventoryDiff &gt;= 0]" DisplayName="If Inventory Exists" sap:VirtualizedContainerService.HintSize="684,872.666666666667" sap2010:WorkflowViewState.IdRef="If_8">
+                      <If sap2010:Annotation.AnnotationText="If Exact match for Variant " Condition="[list(1).Trim.Equals(Code)]" DisplayName="If Desired Variant" sap:VirtualizedContainerService.HintSize="562.666666666667,1285.33333333333" sap2010:WorkflowViewState.IdRef="If_15">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <Sequence DisplayName="Select Target Row" sap:VirtualizedContainerService.HintSize="376,678.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          <Sequence sap:VirtualizedContainerService.HintSize="526,1070.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:String" Name="TargetProduct" />
+                            </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign DisplayName="Assign Element to activate" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_4">
+                            <Assign sap2010:Annotation.AnnotationText="For  use if no replacement found" DisplayName="Assign Target Selector" sap:VirtualizedContainerService.HintSize="484,92.6666666666667" sap2010:WorkflowViewState.IdRef="Assign_19">
                               <Assign.To>
-                                <OutArgument x:TypeArguments="ui:UiElement">[NewElement]</OutArgument>
+                                <OutArgument x:TypeArguments="x:String">[TargetSelector]</OutArgument>
                               </Assign.To>
                               <Assign.Value>
-                                <InArgument x:TypeArguments="ui:UiElement">[New UiElement(new Selector(list(0)))]</InArgument>
+                                <InArgument x:TypeArguments="x:String">[list(0)]</InArgument>
                               </Assign.Value>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
                             </Assign>
-                            <uix:NClick ClickType="Single" DisplayName="Click the target row " sap:VirtualizedContainerService.HintSize="334,118.666666666667" sap2010:WorkflowViewState.IdRef="NClick_1" InUiElement="[NewElement]" KeyModifiers="None" MouseButton="Left" />
-                            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,159.333333333333" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" InUiElement="[NewElement]" Shortcuts="[d(hk)][k(enter)][u(hk)]" />
-                            <Assign DisplayName="Assign Success" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_15">
+                            <Assign sap2010:Annotation.AnnotationText="For reporting purposes" DisplayName="Assign Target Product" sap:VirtualizedContainerService.HintSize="484,92.6666666666667" sap2010:WorkflowViewState.IdRef="Assign_20">
                               <Assign.To>
-                                <OutArgument x:TypeArguments="x:Boolean">[pointer1]</OutArgument>
+                                <OutArgument x:TypeArguments="x:String">[TargetProduct]</OutArgument>
                               </Assign.To>
                               <Assign.Value>
-                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                <InArgument x:TypeArguments="x:String">[list(1)]</InArgument>
                               </Assign.Value>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
                             </Assign>
-                            <ui:Break sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Break_4" />
+                            <If sap2010:Annotation.AnnotationText="Ifsufficient inventory found, it is processed and ends" Condition="[list(1).Trim.Equals(Code) And InventoryDiff &gt;= 0]" DisplayName="If Inventory Exists" sap:VirtualizedContainerService.HintSize="484,710.666666666667" sap2010:WorkflowViewState.IdRef="If_8">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <If.Then>
+                                <Sequence DisplayName="Select Target Row" sap:VirtualizedContainerService.HintSize="376,496" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:CommentOut sap2010:Annotation.AnnotationText="Back-up, remove if tested OK" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,83.3333333333333" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+                                    <ui:CommentOut.Body>
+                                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="418,601.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Sequence DisplayName="Selection" sap:VirtualizedContainerService.HintSize="376,512" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign DisplayName="Assign Element to activate" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="ui:UiElement">[NewElement]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="ui:UiElement">[New UiElement(new Selector(list(0)))]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <uix:NClick ClickType="Single" DisplayName="Click the target row " sap:VirtualizedContainerService.HintSize="334,118.666666666667" sap2010:WorkflowViewState.IdRef="NClick_1" InUiElement="[NewElement]" KeyModifiers="None" MouseButton="Left" />
+                                          <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,159.333333333333" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" InUiElement="[NewElement]" Shortcuts="[d(hk)][k(enter)][u(hk)]" />
+                                        </Sequence>
+                                      </Sequence>
+                                    </ui:CommentOut.Body>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:CommentOut>
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Select Target Row workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Components\Select Target Row.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_SelectorString">
+                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="list(0)" />
+                                      </InArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                  </ui:InvokeWorkflowFile>
+                                  <Assign DisplayName="Assign Success" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Boolean">[pointer1]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <ui:Break sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Break_4" />
+                                </Sequence>
+                              </If.Then>
+                            </If>
                           </Sequence>
                         </If.Then>
-                        <If.Else>
-                          <Assign DisplayName="Assign Failed" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_17">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Boolean">[pointer1]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </If.Else>
                       </If>
                     </Sequence>
                   </ActivityAction>
                 </ui:ForEach.Body>
               </ui:ForEach>
-              <If sap2010:Annotation.AnnotationText="If not exact match found, look for other variants" Condition="[Not pointer1]" DisplayName="If Value not Found" sap:VirtualizedContainerService.HintSize="762.666666666667,359.333333333333" sap2010:WorkflowViewState.IdRef="If_13">
+              <If sap2010:Annotation.AnnotationText="If not exact match found, look for other variants" Condition="[Not pointer1]" DisplayName="If Value not Found" sap:VirtualizedContainerService.HintSize="641.333333333333,1152" sap2010:WorkflowViewState.IdRef="If_13">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Looks up and returns datatable of variants to use" DisplayName="Invoke Calculate Variants Table workflow" sap:VirtualizedContainerService.HintSize="334,144.666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Components\Calculate Variants Table.xaml">
-                    <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="scg:List(scg:List(x:String))" x:Key="in_VariantList">
-                        <mva:VisualBasicValue x:TypeArguments="scg:List(scg:List(x:String))" ExpressionText="SelectorMasterList" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_ShortCode">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ShortCode" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_Suffix">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Suffix" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:Int32" x:Key="in_Quantity">
-                        <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Order" />
-                      </InArgument>
-                      <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ProcessedTable">
-                        <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ProcessedTable" />
-                      </OutArgument>
-                    </ui:InvokeWorkflowFile.Arguments>
+                  <Sequence DisplayName="Select Replacement" sap:VirtualizedContainerService.HintSize="538.666666666667,937.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Int32" Name="RowCount" />
+                    </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                  </ui:InvokeWorkflowFile>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Looks up and returns datatable of variants to use" DisplayName="Invoke Calculate Variants Table workflow" sap:VirtualizedContainerService.HintSize="496.666666666667,144.666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Components\Calculate Variants Table.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="scg:List(scg:List(x:String))" x:Key="in_VariantList">
+                          <mva:VisualBasicValue x:TypeArguments="scg:List(scg:List(x:String))" ExpressionText="SelectorMasterList" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_ShortCode">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ShortCode" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Suffix">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Suffix" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_Quantity">
+                          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Order" />
+                        </InArgument>
+                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ProcessedTable">
+                          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ProcessedTable" />
+                        </OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_ExpirationSelection">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ExpirationSelection" />
+                        </InArgument>
+                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_OrderBalance">
+                          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="OrderBalance" />
+                        </OutArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:InvokeWorkflowFile>
+                    <Assign DisplayName="Assign Row Count" sap:VirtualizedContainerService.HintSize="496.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_18">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[RowCount]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[ProcessedTable.Rows.Count]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Switch x:TypeArguments="x:Int32" DisplayName="Switch based on Rows Count" Expression="[RowCount]" sap:VirtualizedContainerService.HintSize="496.666666666667,557.333333333333" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                      <Sequence x:Key="0" DisplayName="Log and Select" sap:VirtualizedContainerService.HintSize="376,342" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Replacement not found&quot;]" />
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Select Target Row workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Components\Select Target Row.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_SelectorString">
+                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="TargetSelector" />
+                            </InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                      </Sequence>
+                      <Sequence x:Key="1" DisplayName="Log found and Select" sap:VirtualizedContainerService.HintSize="376,343.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Replacement found Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Exactly 1 replacement found&quot;]" />
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Select Target Row workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Components\Select Target Row.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_SelectorString">
+                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ProcessedTable.rows(0).Item(&quot;Selector&quot;).ToString" />
+                            </InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                      </Sequence>
+                    </Switch>
+                  </Sequence>
                 </If.Then>
               </If>
             </Sequence>
