@@ -3,6 +3,7 @@
   "description": "Read excel, input to Helios ERP",
   "main": "Main.xaml",
   "dependencies": {
+    "MavenickConsulting.AutocloseMsgBox.Activities": "[1.1.2]",
     "UiPath.Excel.Activities": "[2.10.4]",
     "UiPath.Mail.Activities": "[1.10.4]",
     "UiPath.System.Activities": "[21.4.0]",
@@ -13,7 +14,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.4.1.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.1-alpha",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,

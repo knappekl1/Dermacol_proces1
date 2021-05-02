@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2127.33333333333,4299.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2127.33333333333,4340.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenHelios_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="72">
@@ -75,7 +75,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="OpenHelios" sap:VirtualizedContainerService.HintSize="1818,4234.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="OpenHelios" sap:VirtualizedContainerService.HintSize="1818,4276" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sco:Collection(sd:Process)" Name="OpenProcesses" />
       <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(of String)]" Name="ProcessList" />
@@ -95,7 +95,7 @@
         <OutArgument x:TypeArguments="x:String">[Helios_DB]</OutArgument>
       </ui:GetRobotAsset.Value>
     </ui:GetRobotAsset>
-    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Odhlásit'" sap:VirtualizedContainerService.HintSize="1776,3733.33333333333" sap2010:WorkflowViewState.IdRef="NCheckState_2">
+    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Odhlásit'" sap:VirtualizedContainerService.HintSize="1776,3774.66666666667" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="30">
       <uix:NCheckState.IfExists>
         <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,189.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
@@ -107,7 +107,7 @@
         </Sequence>
       </uix:NCheckState.IfExists>
       <uix:NCheckState.IfNotExists>
-        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1346,3503.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1346,3504.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>

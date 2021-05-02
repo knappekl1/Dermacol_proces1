@@ -156,6 +156,16 @@
         "C:\\Users\\libor\\.nuget\\packages\\uipath.webapi.activities/1.7.0\\lib/net461/UiPath.Web.dll"
       ],
       "Path": "C:\\Users\\libor\\.nuget\\packages\\uipath.webapi.activities\\1.7.0"
+    },
+    {
+      "Package": {
+        "Id": "MavenickConsulting.AutocloseMsgBox.Activities",
+        "Version": "1.1.2"
+      },
+      "Assemblies": [
+        "C:\\Users\\libor\\.nuget\\packages\\mavenickconsulting.autoclosemsgbox.activities/1.1.2\\lib/AutoCloseMsgBox.dll"
+      ],
+      "Path": "C:\\Users\\libor\\.nuget\\packages\\mavenickconsulting.autoclosemsgbox.activities\\1.1.2"
     }
   ],
   "Conflicts": [],
@@ -283,6 +293,11 @@
           "Item2": "[2.10.0, )"
         }
       ]
+    },
+    "MavenickConsulting.AutocloseMsgBox.Activities": {
+      "Id": "MavenickConsulting.AutocloseMsgBox.Activities",
+      "Version": "1.1.2",
+      "Dependencies": []
     },
     "Microsoft.AspNet.SignalR.Client": {
       "Id": "Microsoft.AspNet.SignalR.Client",
@@ -1129,6 +1144,16 @@
         "C:\\Users\\libor\\.nuget\\packages\\mailkit\\2.10.0\\lib\\net46\\MailKit.dll"
       ],
       "Path": "C:\\Users\\libor\\.nuget\\packages\\mailkit\\2.10.0"
+    },
+    {
+      "Package": {
+        "Id": "MavenickConsulting.AutocloseMsgBox.Activities",
+        "Version": "1.1.2"
+      },
+      "Assemblies": [
+        "C:\\Users\\libor\\.nuget\\packages\\mavenickconsulting.autoclosemsgbox.activities\\1.1.2\\lib\\AutoCloseMsgBox.dll"
+      ],
+      "Path": "C:\\Users\\libor\\.nuget\\packages\\mavenickconsulting.autoclosemsgbox.activities\\1.1.2"
     },
     {
       "Package": {

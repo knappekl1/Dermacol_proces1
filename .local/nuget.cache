@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YdhpfFYJkIdkEwOx9tO8SjH1PAMmaw/6tcTmdAP/IO3EZTxdOSAak4GVlOESue5aYYngI45I3nFKxEMqgapUeg==",
+  "dgSpecHash": "JGMiDkMWkCFnS8uL1apP8xGYxmaoA/PMIz4riqOjotc5oF0Hw2qK9t+xXyvFmjaNocvGgpVjfeMdc6n2sH6WyQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\libor\\Dropbox\\LK_docs\\Valuetools\\Zákazníci\\Dermacol\\Demo Projekt\\Process\\Helios_module_1\\.local\\",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\libor\\.nuget\\packages\\google.apis.gmail.v1\\1.43.0.1859\\google.apis.gmail.v1.1.43.0.1859.nupkg.sha512",
     "C:\\Users\\libor\\.nuget\\packages\\google.apis.peopleservice.v1\\1.43.0.1876\\google.apis.peopleservice.v1.1.43.0.1876.nupkg.sha512",
     "C:\\Users\\libor\\.nuget\\packages\\mailkit\\2.10.0\\mailkit.2.10.0.nupkg.sha512",
+    "C:\\Users\\libor\\.nuget\\packages\\mavenickconsulting.autoclosemsgbox.activities\\1.1.2\\mavenickconsulting.autoclosemsgbox.activities.1.1.2.nupkg.sha512",
     "C:\\Users\\libor\\.nuget\\packages\\microsoft.aspnet.signalr.client\\2.4.0\\microsoft.aspnet.signalr.client.2.4.0.nupkg.sha512",
     "C:\\Users\\libor\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\3.1.6\\microsoft.aspnetcore.connections.abstractions.3.1.6.nupkg.sha512",
     "C:\\Users\\libor\\.nuget\\packages\\microsoft.aspnetcore.http.connections.client\\3.1.6\\microsoft.aspnetcore.http.connections.client.3.1.6.nupkg.sha512",

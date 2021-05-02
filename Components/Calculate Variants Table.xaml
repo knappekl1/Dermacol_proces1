@@ -7,6 +7,7 @@
     <x:Property Name="out_ProcessedTable" Type="OutArgument(sd:DataTable)" />
     <x:Property Name="in_ExpirationSelection" Type="InArgument(x:String)" />
     <x:Property Name="out_OrderBalance" Type="OutArgument(x:Int32)" />
+    <x:Property Name="in_MinInventory" Type="InArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -147,7 +148,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[Row(3).Contains(&quot;Zrušen&quot;) Or Row(2).Equals(&quot;0&quot;)]" DisplayName="If Zrušeno or not in inventory, remove from list" sap:VirtualizedContainerService.HintSize="580,258.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[Row(3).Contains(&quot;Zrušen&quot;) Or Cint(Row(2)) &lt;= in_MinInventory]" DisplayName="If Zrušeno or not in inventory, remove from list" sap:VirtualizedContainerService.HintSize="580,258.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <ui:LogMessage DisplayName="Log Remove Row Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Row &quot; + Index.ToString + &quot; removed from Datatable&quot;]" />
               </If.Then>
@@ -223,7 +224,7 @@
                   <OutArgument x:TypeArguments="x:String">[NewVariant]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[in_shortCode + Chr(Asc(CompareList(0).Substring(CompareList(0).Length-1)) +i)]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_shortCode + Chr(Asc(CompareList.LastOrDefault.Substring(CompareList.LastOrDefault.Length-1)) +i)]</InArgument>
                 </Assign.Value>
               </Assign>
               <AddToCollection x:TypeArguments="x:String" Collection="[CompareList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_4" Item="[NewVariant]" />
@@ -267,12 +268,8 @@
             <InvokeMethod.TargetObject>
               <InArgument x:TypeArguments="scg:List(x:String)">[CompareList]</InArgument>
             </InvokeMethod.TargetObject>
-            <InArgument x:TypeArguments="x:Int32">
-              <Literal x:TypeArguments="x:Int32" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:Int32">
-              <Literal x:TypeArguments="x:Int32" Value="2" />
-            </InArgument>
+            <InArgument x:TypeArguments="x:Int32">0</InArgument>
+            <InArgument x:TypeArguments="x:Int32">2</InArgument>
           </InvokeMethod>
         </If.Then>
       </If>
