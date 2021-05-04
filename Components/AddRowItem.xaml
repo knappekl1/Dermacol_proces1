@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2127.33333333333,4972</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2124,4972</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AddRowItem_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
@@ -146,7 +146,7 @@
         <OutArgument x:TypeArguments="x:Int32">[MinInventory]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:Int32">70</InArgument>
+        <InArgument x:TypeArguments="x:Int32">0</InArgument>
       </Assign.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -170,7 +170,7 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <If Condition="[in_ExpirationSelection.Equals(&quot;Expirace-Pleťová&quot;)]" DisplayName="If Pletova Transform" sap:VirtualizedContainerService.HintSize="648.666666666667,502.666666666667" sap2010:WorkflowViewState.IdRef="If_2">
+        <If Condition="[in_ExpirationSelection.Equals(&quot;Expirace-Pleťová&quot;)]" DisplayName="If Pletova, Transform" sap:VirtualizedContainerService.HintSize="648.666666666667,502.666666666667" sap2010:WorkflowViewState.IdRef="If_2">
           <If.Then>
             <Sequence DisplayName="Select Appripriate Exp Parameter" sap:VirtualizedContainerService.HintSize="612,318" sap2010:WorkflowViewState.IdRef="Sequence_10">
               <Sequence.Variables>
