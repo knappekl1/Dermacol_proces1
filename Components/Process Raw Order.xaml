@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2127.33333333333,3376</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2122.66666666667,3294.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Process_Raw_Order_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -84,7 +84,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Process_Raw_Order" sap:VirtualizedContainerService.HintSize="646.666666666667,3311.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Process_Raw_Order" sap:VirtualizedContainerService.HintSize="646.666666666667,3230" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="OrderRaw" />
       <Variable x:TypeArguments="sd:DataTable" Name="OrderFiltered" />
@@ -123,7 +123,7 @@
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[OrderRaw]" DisplayName="Read Order" sap:VirtualizedContainerService.HintSize="604.666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="All products" WorkbookPath="[in_FilePath]" />
-    <Sequence DisplayName="Process Datatable" sap:VirtualizedContainerService.HintSize="604.666666666667,2764.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Process Datatable" sap:VirtualizedContainerService.HintSize="604.666666666667,2683.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="s:Object[]" Name="ColNames" />
         <Variable x:TypeArguments="x:Int32" Name="i" />
@@ -283,37 +283,81 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
-      <Assign DisplayName="Remove empty rows" sap:VirtualizedContainerService.HintSize="562.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_3">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[OrderFiltered]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable">[OrderRaw.AsEnumerable.Where(Function (x) x.Item(OrderKeyWord).ToString &lt;&gt;"").CopyToDataTable]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="562.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_12">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[OrderFiltered]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable">[OrderFiltered.AsEnumerable.Where(Function (x) x.Item(OrderKeyWord).ToString &lt;&gt;"0").CopyToDataTable]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign DisplayName="Remove rows with non digit in Code" sap:VirtualizedContainerService.HintSize="562.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_5">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[OrderFiltered]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable">[OrderFiltered.AsEnumerable.Where(Function (x) Regex.IsMatch(x.Item(KeyWord).ToString,"\d+")).CopyToDataTable]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <ui:WriteRange AddHeaders="True" sap2010:Annotation.AnnotationText="Testing only" DataTable="[OrderFiltered]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="562.666666666667,145.333333333333" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="Data\Test1.xlsx">
+      <TryCatch DisplayName="Try to Filter Order Table" sap:VirtualizedContainerService.HintSize="562.666666666667,277.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+        <TryCatch.Try>
+          <Sequence DisplayName="Filter steps" sap:VirtualizedContainerService.HintSize="304,358" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Remove empty rows" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[OrderFiltered]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataTable">[OrderRaw.AsEnumerable.Where(Function (x) x.Item(OrderKeyWord).ToString &lt;&gt;"").CopyToDataTable]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign Filtered Order" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_12">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[OrderFiltered]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataTable">[OrderFiltered.AsEnumerable.Where(Function (x) x.Item(OrderKeyWord).ToString &lt;&gt;"0").CopyToDataTable]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Remove rows with non digit in Code" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[OrderFiltered]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataTable">[OrderFiltered.AsEnumerable.Where(Function (x) Regex.IsMatch(x.Item(KeyWord).ToString,"\d+")).CopyToDataTable]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </TryCatch.Try>
+        <TryCatch.Catches>
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,105.333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ActivityAction x:TypeArguments="s:Exception">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+              </ActivityAction.Argument>
+              <Throw Exception="[New BusinessRuleException(&quot;Objednávka neobsahuje žádné číselné hodnoty ve sloupci Order&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
+            </ActivityAction>
+          </Catch>
+        </TryCatch.Catches>
+      </TryCatch>
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="562.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,237.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:WriteRange AddHeaders="True" sap2010:Annotation.AnnotationText="Testing only" DataTable="[OrderFiltered]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,145.333333333333" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="Data\Test1.xlsx">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:WriteRange>
+          </Sequence>
+        </ui:CommentOut.Body>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-      </ui:WriteRange>
+      </ui:CommentOut>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="562.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Order table successfully filtered&quot;]" />
       <Assign sap:VirtualizedContainerService.HintSize="562.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_11">
         <Assign.To>

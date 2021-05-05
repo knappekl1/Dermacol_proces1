@@ -6,4 +6,5 @@
 "keyWordColumn":"Code",
 "priceColumn1":"Billing price TOTAL",
 "priceColumn2":"Price Total",
-"orderColumn":"Order"}
+"orderColumn":"Order",
+"outputFilePath":"DATA\\output.csv"}

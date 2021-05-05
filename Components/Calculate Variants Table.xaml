@@ -74,6 +74,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Calculate_Variants_Table" sap:VirtualizedContainerService.HintSize="1280.66666666667,5027.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -203,7 +204,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For i=1 To 3" sap:VirtualizedContainerService.HintSize="654,354.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Enumerable.Range(1,3)]">
+      <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For i=1 To n" sap:VirtualizedContainerService.HintSize="340.666666666667,354.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Enumerable.Range(1,2)]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:Int32">
             <ActivityAction.Argument>
