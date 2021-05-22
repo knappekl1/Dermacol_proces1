@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Inventory_Check" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Inventory_Check" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_Note" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2127.33333333333,4396.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2124,3426</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Inventory_Check_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -43,7 +43,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="50">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -68,32 +68,43 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Inventory_Check" sap:VirtualizedContainerService.HintSize="916.666666666667,4332" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Inventory_Check" sap:VirtualizedContainerService.HintSize="880,3361.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Rozpady stavu skladu" sap:VirtualizedContainerService.HintSize="874.666666666667,4240" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Rozpady stavu skladu" sap:VirtualizedContainerService.HintSize="838,3269.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Find Expiration Dates" sap:VirtualizedContainerService.HintSize="840.666666666667,3945.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Find Expiration Dates" sap:VirtualizedContainerService.HintSize="804,2934.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:UiElement" Name="TableElements" />
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="RowElements" />
               <Variable x:TypeArguments="x:String" Name="Notes" />
+              <Variable x:TypeArguments="s:String[]" Name="TargetSelectors" />
+              <Variable x:TypeArguments="s:String[]" Name="Comments" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Init Notes" sap:VirtualizedContainerService.HintSize="798.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign DisplayName="Init Notes" sap:VirtualizedContainerService.HintSize="762,62" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[Notes]</OutArgument>
               </Assign.To>
@@ -101,8 +112,8 @@
                 <InArgument x:TypeArguments="x:String">[String.Empty]</InArgument>
               </Assign.Value>
             </Assign>
-            <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="798.666666666667,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element Table" FoundElement="[TableElements]" sap:VirtualizedContainerService.HintSize="798.666666666667,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
+            <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="762,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element Table" FoundElement="[TableElements]" sap:VirtualizedContainerService.HintSize="762,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
               <ui:WaitUiElementAppear.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b249037f-c74a-449e-90fa-3ff353794a80" InformativeScreenshot="f4ba4e7b337c3632bfe556393d382f79" Selector="&lt;wnd ctrlname='TabGroup' /&gt;&lt;wnd ctrlname='myBrowse' /&gt;&lt;wnd ctrlname='myBrowse' /&gt;&lt;ctrl name='Browse' role='table' /&gt;" TimeoutMS="3000">
                   <ui:Target.WaitForReady>
@@ -111,8 +122,8 @@
                 </ui:Target>
               </ui:WaitUiElementAppear.Target>
             </ui:WaitUiElementAppear>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="798.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Table Rozpady stav skladu found &quot;]" />
-            <ui:FindChildren Children="[RowElements]" DisplayName="Find Children" Filter="&lt;ctrl /&gt;" sap:VirtualizedContainerService.HintSize="798.666666666667,68" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="762,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Table Rozpady stav skladu found &quot;]" />
+            <ui:FindChildren Children="[RowElements]" DisplayName="Find Children" Filter="&lt;ctrl /&gt;" sap:VirtualizedContainerService.HintSize="762,68" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
               <ui:FindChildren.Target>
                 <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[TableElements]" Id="f6665dc0-d7dc-470e-8fb9-b370a8cfa4eb" TimeoutMS="2000">
                   <ui:Target.WaitForReady>
@@ -121,13 +132,42 @@
                 </ui:Target>
               </ui:FindChildren.Target>
             </ui:FindChildren>
-            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="798.666666666667,2998" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[RowElements]">
+            <Assign sap2010:Annotation.AnnotationText="Used for contruction of selectors inside the row Loop" DisplayName="Assign Selector List" sap:VirtualizedContainerService.HintSize="762,107.333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:String[]">[TargetSelectors]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:String[]">[{"&lt;ctrl name='Expirace' role='cell' /&gt;","&lt;ctrl name='Exp. MĚSÍCE' role='cell' /&gt;"}]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="762,62" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:String[]">[Comments]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:String[]">[{"Datum Expirace: ","Měsíců: "}]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign Notes Opening" sap:VirtualizedContainerService.HintSize="762,62" sap2010:WorkflowViewState.IdRef="Assign_10">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[Notes]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[string.Empty]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="762,1634.66666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[RowElements]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ui:UiElement">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:UiElement" Name="item" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="762,2860" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="725.333333333333,1496.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="Cells" />
                     </Sequence.Variables>
@@ -136,127 +176,223 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[item.Selector.Text.Contains(&quot;role='row'&quot;)]" sap:VirtualizedContainerService.HintSize="720,2766.66666666667" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[item.Selector.Text.Contains(&quot;role='row'&quot;)]" sap:VirtualizedContainerService.HintSize="683.333333333333,1402" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="683.333333333333,2582.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence sap:VirtualizedContainerService.HintSize="646.666666666667,1218" sap2010:WorkflowViewState.IdRef="Sequence_12">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="641.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Processing Row &quot;]" />
-                          <ui:FindChildren Children="[Cells]" DisplayName="Find Children" Filter="&lt;ctrl /&gt;" sap:VirtualizedContainerService.HintSize="641.333333333333,68" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_CHILDREN">
-                            <ui:FindChildren.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[item]" Id="eee2f055-4581-4fa1-8063-e5be7501981f" TimeoutMS="2000">
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
-                              </ui:Target>
-                            </ui:FindChildren.Target>
-                          </ui:FindChildren>
-                          <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="641.333333333333,2246.66666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Cells]">
-                            <ui:ForEach.Body>
-                              <ActivityAction x:TypeArguments="ui:UiElement">
-                                <ActivityAction.Argument>
-                                  <DelegateInArgument x:TypeArguments="ui:UiElement" Name="cell" />
-                                </ActivityAction.Argument>
-                                <Sequence DisplayName="Get Text" sap:VirtualizedContainerService.HintSize="604.666666666667,2108.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                                  <Sequence.Variables>
-                                    <Variable x:TypeArguments="x:String" Name="Expirace" />
-                                    <Variable x:TypeArguments="x:String" Name="ExpMesic" />
-                                  </Sequence.Variables>
+                          <Sequence DisplayName="Direct Read Elements" sap:VirtualizedContainerService.HintSize="604.666666666667,1030.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:String" Name="TargetElementText" />
+                              <Variable x:TypeArguments="ui:UiElement" Name="TargetElement" />
+                              <Variable x:TypeArguments="x:String" Name="OutputText" />
+                              <Variable x:TypeArguments="x:Int32" Name="i" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[i]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="562.666666666667,936" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[TargetSelectors]">
+                              <ui:ForEach.Body>
+                                <ActivityAction x:TypeArguments="x:String">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="x:String" Name="Sel" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,798" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign sap:VirtualizedContainerService.HintSize="484,62" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[TargetElementText]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[item.Selector.Text + Sel]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign DisplayName="Assign Element" sap:VirtualizedContainerService.HintSize="484,62" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="ui:UiElement">[TargetElement]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="ui:UiElement">[New UiElement(New Selector(TargetElementText))]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <uix:NGetText DisplayName="Get Text" sap:VirtualizedContainerService.HintSize="484,118.666666666667" sap2010:WorkflowViewState.IdRef="NGetText_3" InUiElement="[TargetElement]">
+                                      <uix:NGetText.Text>
+                                        <OutArgument x:TypeArguments="x:String">[OutputText]</OutArgument>
+                                      </uix:NGetText.Text>
+                                    </uix:NGetText>
+                                    <If Condition="[not(OutputText = &quot;Expirace&quot; Or OutputText = &quot;Exp. MĚSÍCE&quot;)]" sap:VirtualizedContainerService.HintSize="484,340.666666666667" sap2010:WorkflowViewState.IdRef="If_6">
+                                      <If.Then>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="304,156.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Notes]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[Notes + Comments(i) + OutputText + ", "]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </Sequence>
+                                      </If.Then>
+                                    </If>
+                                  </Sequence>
+                                </ActivityAction>
+                              </ui:ForEach.Body>
+                            </ui:ForEach>
+                          </Sequence>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="604.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="725.333333333333,2650.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Sequence DisplayName="Loop RowElements" sap:VirtualizedContainerService.HintSize="683.333333333333,2558.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <If Condition="[cell.Selector.Text.Contains(&quot;Expirace&quot;)]" DisplayName="If Expirace in Selector" sap:VirtualizedContainerService.HintSize="562.666666666667,955.333333333333" sap2010:WorkflowViewState.IdRef="If_2">
-                                    <If.Then>
-                                      <Sequence DisplayName="Get and assign Expirace Text" sap:VirtualizedContainerService.HintSize="526,771.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <uix:NGetText DisplayName="Get Text" sap:VirtualizedContainerService.HintSize="484,118.666666666667" sap2010:WorkflowViewState.IdRef="NGetText_1" InUiElement="[cell]">
-                                          <uix:NGetText.Text>
-                                            <OutArgument x:TypeArguments="x:String">[Expirace]</OutArgument>
-                                          </uix:NGetText.Text>
-                                        </uix:NGetText>
-                                        <If sap2010:Annotation.AnnotationText="If tehre is no value in the text property, the text contains column label, i.e. here &quot;Expirace&quot;" Condition="[Expirace &lt;&gt; &quot;Expirace&quot;]" DisplayName="If any value in text" sap:VirtualizedContainerService.HintSize="484,520.666666666667" sap2010:WorkflowViewState.IdRef="If_3">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="641.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Processing Row &quot;]" />
+                                  <ui:FindChildren Children="[Cells]" DisplayName="Find Children" Filter="&lt;ctrl /&gt;" sap:VirtualizedContainerService.HintSize="641.333333333333,68" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_CHILDREN">
+                                    <ui:FindChildren.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[item]" Id="eee2f055-4581-4fa1-8063-e5be7501981f" TimeoutMS="2000">
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:FindChildren.Target>
+                                  </ui:FindChildren>
+                                  <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="641.333333333333,2224" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Cells]">
+                                    <ui:ForEach.Body>
+                                      <ActivityAction x:TypeArguments="ui:UiElement">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="ui:UiElement" Name="cell" />
+                                        </ActivityAction.Argument>
+                                        <Sequence DisplayName="Get Text" sap:VirtualizedContainerService.HintSize="604.666666666667,2088.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                          <Sequence.Variables>
+                                            <Variable x:TypeArguments="x:String" Name="Expirace" />
+                                            <Variable x:TypeArguments="x:String" Name="ExpMesic" />
+                                          </Sequence.Variables>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <If.Then>
-                                            <Sequence DisplayName="Assign Value to Notes" sap:VirtualizedContainerService.HintSize="376,291.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <Assign DisplayName="Add Expirace" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_3">
-                                                <Assign.To>
-                                                  <OutArgument x:TypeArguments="x:String">[Notes]</OutArgument>
-                                                </Assign.To>
-                                                <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:String">[Notes + " Expirace šarže: " + Expirace + " "]</InArgument>
-                                                </Assign.Value>
-                                              </Assign>
-                                              <ui:LogMessage DisplayName="Log Selector Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Expirace date found: &quot; + Expirace]" />
-                                            </Sequence>
-                                          </If.Then>
-                                        </If>
-                                      </Sequence>
-                                    </If.Then>
-                                  </If>
-                                  <If Condition="[cell.Selector.Text.Contains(&quot;Exp. MĚSÍCE&quot;)]" DisplayName="If Exp Měsíc in Selector" sap:VirtualizedContainerService.HintSize="562.666666666667,1020" sap2010:WorkflowViewState.IdRef="If_5">
-                                    <If.Then>
-                                      <Sequence DisplayName="Get and assign Expirace Text" sap:VirtualizedContainerService.HintSize="526,836" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <uix:NGetText DisplayName="Get Text" sap:VirtualizedContainerService.HintSize="484,118.666666666667" sap2010:WorkflowViewState.IdRef="NGetText_2" InUiElement="[cell]">
-                                          <uix:NGetText.Text>
-                                            <OutArgument x:TypeArguments="x:String">[ExpMesic]</OutArgument>
-                                          </uix:NGetText.Text>
-                                        </uix:NGetText>
-                                        <If sap2010:Annotation.AnnotationText="If tehre is no value in the text property, the text contains column label, i.e. here &quot;Expirace&quot;" Condition="[ExpMesic &lt;&gt; &quot;Exp. MĚSÍCE&quot;]" DisplayName="If any value in text" sap:VirtualizedContainerService.HintSize="484,520.666666666667" sap2010:WorkflowViewState.IdRef="If_4">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <If.Then>
-                                            <Sequence DisplayName="Assign Value to Notes" sap:VirtualizedContainerService.HintSize="376,291.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <Assign DisplayName="Add Expirace" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_4">
-                                                <Assign.To>
-                                                  <OutArgument x:TypeArguments="x:String">[Notes]</OutArgument>
-                                                </Assign.To>
-                                                <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:String">[Notes + ", Měsíce: " + ExpMesic + "; "]</InArgument>
-                                                </Assign.Value>
-                                              </Assign>
-                                              <ui:LogMessage DisplayName="Log Selector Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Expirace date found: &quot; + Expirace]" />
-                                            </Sequence>
-                                          </If.Then>
-                                        </If>
-                                        <ui:Break sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Break_2" />
-                                      </Sequence>
-                                    </If.Then>
-                                  </If>
+                                          <If Condition="[cell.Selector.Text.Contains(&quot;Expirace&quot;)]" DisplayName="If Expirace in Selector" sap:VirtualizedContainerService.HintSize="562.666666666667,947.333333333333" sap2010:WorkflowViewState.IdRef="If_2">
+                                            <If.Then>
+                                              <Sequence DisplayName="Get and assign Expirace Text" sap:VirtualizedContainerService.HintSize="526,766" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <uix:NGetText DisplayName="Get Text" sap:VirtualizedContainerService.HintSize="484,118.666666666667" sap2010:WorkflowViewState.IdRef="NGetText_1" InUiElement="[cell]">
+                                                  <uix:NGetText.Text>
+                                                    <OutArgument x:TypeArguments="x:String">[Expirace]</OutArgument>
+                                                  </uix:NGetText.Text>
+                                                </uix:NGetText>
+                                                <If sap2010:Annotation.AnnotationText="If tehre is no value in the text property, the text contains column label, i.e. here &quot;Expirace&quot;" Condition="[Expirace &lt;&gt; &quot;Expirace&quot;]" DisplayName="If any value in text" sap:VirtualizedContainerService.HintSize="484,515.333333333333" sap2010:WorkflowViewState.IdRef="If_3">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <If.Then>
+                                                    <Sequence DisplayName="Assign Value to Notes" sap:VirtualizedContainerService.HintSize="376,288.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <Assign DisplayName="Add Expirace" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:String">[Notes]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:String">[Notes + " Expirace šarže: " + Expirace + " "]</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
+                                                      <ui:LogMessage DisplayName="Log Selector Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Expirace date found: &quot; + Expirace]" />
+                                                    </Sequence>
+                                                  </If.Then>
+                                                </If>
+                                              </Sequence>
+                                            </If.Then>
+                                          </If>
+                                          <If Condition="[cell.Selector.Text.Contains(&quot;Exp. MĚSÍCE&quot;)]" DisplayName="If Exp Měsíc in Selector" sap:VirtualizedContainerService.HintSize="562.666666666667,1009.33333333333" sap2010:WorkflowViewState.IdRef="If_5">
+                                            <If.Then>
+                                              <Sequence DisplayName="Get and assign Expirace Text" sap:VirtualizedContainerService.HintSize="526,828" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <uix:NGetText DisplayName="Get Text" sap:VirtualizedContainerService.HintSize="484,118.666666666667" sap2010:WorkflowViewState.IdRef="NGetText_2" InUiElement="[cell]">
+                                                  <uix:NGetText.Text>
+                                                    <OutArgument x:TypeArguments="x:String">[ExpMesic]</OutArgument>
+                                                  </uix:NGetText.Text>
+                                                </uix:NGetText>
+                                                <If sap2010:Annotation.AnnotationText="If tehre is no value in the text property, the text contains column label, i.e. here &quot;Expirace&quot;" Condition="[ExpMesic &lt;&gt; &quot;Exp. MĚSÍCE&quot;]" DisplayName="If any value in text" sap:VirtualizedContainerService.HintSize="484,515.333333333333" sap2010:WorkflowViewState.IdRef="If_4">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <If.Then>
+                                                    <Sequence DisplayName="Assign Value to Notes" sap:VirtualizedContainerService.HintSize="376,288.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <Assign DisplayName="Add Expirace" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:String">[Notes]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:String">[Notes + ", Měsíce: " + ExpMesic + "; "]</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
+                                                      <ui:LogMessage DisplayName="Log Selector Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Expirace date found: &quot; + Expirace]" />
+                                                    </Sequence>
+                                                  </If.Then>
+                                                </If>
+                                                <ui:Break sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Break_2" />
+                                              </Sequence>
+                                            </If.Then>
+                                          </If>
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </ui:ForEach.Body>
+                                  </ui:ForEach>
                                 </Sequence>
-                              </ActivityAction>
-                            </ui:ForEach.Body>
-                          </ui:ForEach>
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:CommentOut>
                         </Sequence>
                       </If.Then>
                     </If>
@@ -264,8 +400,8 @@
                 </ActivityAction>
               </ui:ForEach.Body>
             </ui:ForEach>
-            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="798.666666666667,159.333333333333" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InUiElement="[TableElements]" Shortcuts="[d(hk)][k(esc)][u(hk)]" />
-            <Assign DisplayName="Assign value to out_argument" sap:VirtualizedContainerService.HintSize="798.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="762,159.333333333333" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InUiElement="[TableElements]" Shortcuts="[d(hk)][k(esc)][u(hk)]" />
+            <Assign DisplayName="Assign value to out_argument" sap:VirtualizedContainerService.HintSize="762,62" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[out_Note]</OutArgument>
               </Assign.To>

@@ -163,6 +163,19 @@
           "lib/AutoCloseMsgBox.dll": {}
         }
       },
+      "Microsoft.Activities.Extensions/2.0.6.9": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Activities"
+        ],
+        "compile": {
+          "lib/Net45/_._": {}
+        },
+        "runtime": {
+          "lib/Net45/Microsoft.Activities.Extensions.Design.dll": {},
+          "lib/Net45/Microsoft.Activities.Extensions.dll": {}
+        }
+      },
       "Microsoft.AspNet.SignalR.Client/2.4.0": {
         "type": "package",
         "dependencies": {
@@ -1853,6 +1866,19 @@
         },
         "runtime": {
           "lib/AutoCloseMsgBox.dll": {}
+        }
+      },
+      "Microsoft.Activities.Extensions/2.0.6.9": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Activities"
+        ],
+        "compile": {
+          "lib/Net45/_._": {}
+        },
+        "runtime": {
+          "lib/Net45/Microsoft.Activities.Extensions.Design.dll": {},
+          "lib/Net45/Microsoft.Activities.Extensions.dll": {}
         }
       },
       "Microsoft.AspNet.SignalR.Client/2.4.0": {
@@ -3637,6 +3663,27 @@
         "mavenickconsulting.autoclosemsgbox.activities.nuspec"
       ]
     },
+    "Microsoft.Activities.Extensions/2.0.6.9": {
+      "sha512": "yGwK3gYUzzGIzgybBtXsCbcWIj+Dv+gadnaWkmG0WpBs22AV8ZS7deFhAb2pznDoGz0Pj4M7Tt9RwK9VrNzf4A==",
+      "type": "package",
+      "path": "microsoft.activities.extensions/2.0.6.9",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        "help/Microsoft.Activities.Extensions Documentation.chm",
+        "lib/Net40/Microsoft.Activities.Extensions.Design.dll",
+        "lib/Net40/Microsoft.Activities.Extensions.dll",
+        "lib/Net401/Microsoft.Activities.Extensions.Design.dll",
+        "lib/Net401/Microsoft.Activities.Extensions.dll",
+        "lib/Net45/Microsoft.Activities.Extensions.Design.dll",
+        "lib/Net45/Microsoft.Activities.Extensions.dll",
+        "microsoft.activities.extensions.2.0.6.9.nupkg.sha512",
+        "microsoft.activities.extensions.nuspec",
+        "tools/Microsoft.Activities.Extensions.NuGet.dll",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
     "Microsoft.AspNet.SignalR.Client/2.4.0": {
       "sha512": "xGoQq9dEsBU49U1Whl0To2JyRQePmo8ayYS8VNruLlQaX+fQBzYyLJeMlW9r7mlt8Vc9JP+083m9pKrfYpdDbg==",
       "type": "package",
@@ -5322,6 +5369,7 @@
     "": [],
     ".NETFramework,Version=v4.6.1": [
       "MavenickConsulting.AutocloseMsgBox.Activities >= 1.1.2 <= 1.1.2",
+      "Microsoft.Activities.Extensions >= 2.0.6.9 <= 2.0.6.9",
       "UiPath.Excel.Activities >= 2.10.4 <= 2.10.4",
       "UiPath.Mail.Activities >= 1.10.4 <= 1.10.4",
       "UiPath.System.Activities >= 21.4.0 <= 21.4.0",
@@ -5347,6 +5395,11 @@
             "include": "Runtime",
             "target": "Package",
             "version": "[1.1.2, 1.1.2]"
+          },
+          "Microsoft.Activities.Extensions": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[2.0.6.9, 2.0.6.9]"
           },
           "UiPath.Excel.Activities": {
             "include": "Runtime",

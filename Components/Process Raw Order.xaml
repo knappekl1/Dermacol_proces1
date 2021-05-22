@@ -7,10 +7,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2122.66666666667,3294.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2124,4162</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Process_Raw_Order_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="64">
+    <scg:List x:TypeArguments="x:String" Capacity="36">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -84,7 +84,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Process_Raw_Order" sap:VirtualizedContainerService.HintSize="646.666666666667,3230" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Process_Raw_Order" sap:VirtualizedContainerService.HintSize="646.666666666667,4097.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="OrderRaw" />
       <Variable x:TypeArguments="sd:DataTable" Name="OrderFiltered" />
@@ -123,7 +123,7 @@
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[OrderRaw]" DisplayName="Read Order" sap:VirtualizedContainerService.HintSize="604.666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="All products" WorkbookPath="[in_FilePath]" />
-    <Sequence DisplayName="Process Datatable" sap:VirtualizedContainerService.HintSize="604.666666666667,2683.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Process Datatable" sap:VirtualizedContainerService.HintSize="604.666666666667,3550.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="s:Object[]" Name="ColNames" />
         <Variable x:TypeArguments="x:Int32" Name="i" />
@@ -283,7 +283,43 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
-      <TryCatch DisplayName="Try to Filter Order Table" sap:VirtualizedContainerService.HintSize="562.666666666667,277.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <Sequence sap2010:Annotation.AnnotationText="Adds columns at the end of the Order DataTable. Added columns hold comments, arising during the order processing." DisplayName="Add Comment Columns" sap:VirtualizedContainerService.HintSize="562.666666666667,508.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="s:String[]" Name="CommentColumns" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign DisplayName="Assign ColNames" sap:VirtualizedContainerService.HintSize="305.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_13">
+          <Assign.To>
+            <OutArgument x:TypeArguments="s:String[]">[CommentColumns]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="s:String[]">[{"Reference","Externí číslo", "Odběratel-Název", "Sklad", "Zdroj-číslo", "Název Položky","Počet","Chtěl","Jednotková cena v měně","Cena základ v měně","Expire Date","Doznačení","Rozdíl v ceně","DU balení"}]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="305.333333333333,252.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[CommentColumns]">
+          <ui:ForEach.Body>
+            <ActivityAction x:TypeArguments="x:String">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:String" Name="ColName" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Add Column" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="[ColName]" DataTable="[OrderRaw]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" MaxLength="-1" />
+              </Sequence>
+            </ActivityAction>
+          </ui:ForEach.Body>
+        </ui:ForEach>
+      </Sequence>
+      <TryCatch DisplayName="Try to Filter Order Table" sap:VirtualizedContainerService.HintSize="562.666666666667,596" sap2010:WorkflowViewState.IdRef="TryCatch_2">
         <TryCatch.Try>
           <Sequence DisplayName="Filter steps" sap:VirtualizedContainerService.HintSize="304,358" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
@@ -318,10 +354,10 @@
           </Sequence>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,105.333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>

@@ -7,4 +7,5 @@
 "priceColumn1":"Billing price TOTAL",
 "priceColumn2":"Price Total",
 "orderColumn":"Order",
+"MinimumQuantityColumn":"DU",
 "outputFilePath":"DATA\\output.csv"}
