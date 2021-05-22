@@ -3,11 +3,12 @@
     <x:Property Name="io_CurrentRow" Type="InOutArgument(sd:DataRow)" />
     <x:Property Name="in_NotesList" Type="InArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="out_NoteIndex" Type="OutArgument(x:Int32)" />
+    <x:Property Name="io_ReportTable" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>2124,1185.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2124,1476</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="64">
+    <scg:List x:TypeArguments="x:String" Capacity="38">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>Microsoft.VisualBasic</x:String>
@@ -49,7 +50,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -86,67 +87,146 @@
       <AssemblyReference>AutoCloseMsgBox</AssemblyReference>
       <AssemblyReference>Microsoft.Activities.Extensions</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <If Condition="[in_NotesList.Count &gt; 0]" DisplayName="If Note not Empty Add" sap:VirtualizedContainerService.HintSize="484,908" sap2010:WorkflowViewState.IdRef="If_3">
+  <If Condition="[in_NotesList.Count &gt; 0]" DisplayName="If Note not Empty Add" sap:VirtualizedContainerService.HintSize="641.333333333333,1411.33333333333" sap2010:WorkflowViewState.IdRef="If_3">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <If.Then>
-      <Sequence DisplayName="Add Notes" sap:VirtualizedContainerService.HintSize="382.666666666667,723.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_22">
+      <Sequence DisplayName="Add Notes" sap:VirtualizedContainerService.HintSize="604.666666666667,1226.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_22">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="scg:List(x:String)" Name="NoteList" />
+        </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="340.666666666667,496.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[in_NotesList]">
+        <Assign DisplayName="Init new List" sap:VirtualizedContainerService.HintSize="562.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_15">
+          <Assign.To>
+            <OutArgument x:TypeArguments="scg:List(x:String)">[NoteList]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="scg:List(x:String)">[New List(of String)]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="562.666666666667,743.333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[io_ReportTable.Columns]">
           <ui:ForEach.Body>
-            <ActivityAction x:TypeArguments="scg:KeyValuePair(x:String, x:String)">
+            <ActivityAction x:TypeArguments="sd:DataColumn">
               <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="scg:KeyValuePair(x:String, x:String)" Name="Note" />
+                <DelegateInArgument x:TypeArguments="sd:DataColumn" Name="Col" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Add Note to Order Table" sap:VirtualizedContainerService.HintSize="304,358" sap2010:WorkflowViewState.IdRef="Sequence_39">
+              <Sequence DisplayName="Parse Dict to ColName" sap:VirtualizedContainerService.HintSize="526,604.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_40">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="TargetColumn" />
                   <Variable x:TypeArguments="x:String" Name="NewValue" />
+                  <Variable x:TypeArguments="x:String" Name="ColName" />
+                  <Variable x:TypeArguments="x:String" Name="Value" />
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Extract Col Name" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_11">
+                <Assign DisplayName="Get ColumnName" sap:VirtualizedContainerService.HintSize="484,62" sap2010:WorkflowViewState.IdRef="Assign_16">
                   <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[TargetColumn]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String">[ColName]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[Note.Key]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[col.ColumnName]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign DisplayName="Add new String to Existing" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_13">
+                <Assign DisplayName="Assign Default Value" sap:VirtualizedContainerService.HintSize="484,62" sap2010:WorkflowViewState.IdRef="Assign_17">
                   <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[NewValue]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String">[Value]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[io_CurrentRow.Item(TargetColumn).ToString + " " + Note.Value]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[String.Empty]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign DisplayName="Add note" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_8">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:Object">[io_CurrentRow.Item(TargetColumn)]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:Object">[NewValue]</InArgument>
-                  </Assign.Value>
-                </Assign>
+                <If Condition="[in_NotesList.Keys.Contains(ColName)]" DisplayName="If ColumnName in Notes" sap:VirtualizedContainerService.HintSize="484,246.666666666667" sap2010:WorkflowViewState.IdRef="If_4">
+                  <If.Then>
+                    <Assign DisplayName="Assign Value from Notes" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_18">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[Value]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[in_NotesList(ColName)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </If.Then>
+                </If>
+                <AddToCollection x:TypeArguments="x:String" Collection="[NoteList]" DisplayName="Add Value To Collection" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[Value]" />
               </Sequence>
             </ActivityAction>
           </ui:ForEach.Body>
         </ui:ForEach>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="340.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Notification added to row:  &quot; + out_NoteIndex.ToString]" />
+        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[NoteList.ToArray()]" DataTable="[io_ReportTable]" DisplayName="Add NoteArray to Data Row" sap:VirtualizedContainerService.HintSize="562.666666666667,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="562.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+          <ui:CommentOut.Body>
+            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="382.666666666667,585.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_41">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="340.666666666667,493.333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[in_NotesList]">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="scg:KeyValuePair(x:String, x:String)">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="scg:KeyValuePair(x:String, x:String)" Name="Note" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Add Note to Order Table" sap:VirtualizedContainerService.HintSize="304,358" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="TargetColumn" />
+                        <Variable x:TypeArguments="x:String" Name="NewValue" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign DisplayName="Extract Col Name" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_11">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[TargetColumn]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[Note.Key]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Add new String to Existing" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_13">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[NewValue]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[io_CurrentRow.Item(TargetColumn).ToString + " " + Note.Value]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Add note" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_8">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">[io_CurrentRow.Item(TargetColumn)]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Object">[NewValue]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEach.Body>
+              </ui:ForEach>
+            </Sequence>
+          </ui:CommentOut.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:CommentOut>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="562.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Notification added to row:  &quot; + out_NoteIndex.ToString]" />
       </Sequence>
     </If.Then>
   </If>
