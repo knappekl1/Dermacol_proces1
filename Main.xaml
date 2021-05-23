@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="2124,10598.6666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:m="clr-namespace:Mavenick;assembly=AutoCloseMsgBox" xmlns:maes="clr-namespace:Microsoft.Activities.Extensions.Statements;assembly=Microsoft.Activities.Extensions" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="2124,12011.3333333333" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:m="clr-namespace:Mavenick;assembly=AutoCloseMsgBox" xmlns:maes="clr-namespace:Microsoft.Activities.Extensions.Statements;assembly=Microsoft.Activities.Extensions" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="45">
       <x:String>System.Activities</x:String>
@@ -88,7 +88,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Entire Process" sap:VirtualizedContainerService.HintSize="805.333333333333,10534" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Entire Process" sap:VirtualizedContainerService.HintSize="805.333333333333,11946.6666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="njl:JObject" Name="config" />
       <Variable x:TypeArguments="x:String" Name="InputFilePath" />
@@ -99,9 +99,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="763.333333333333,10442" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="763.333333333333,11854.6666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Main Process" sap:VirtualizedContainerService.HintSize="724.666666666667,10204" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="Main Process" sap:VirtualizedContainerService.HintSize="724.666666666667,11616.6666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="HeaderButton" />
             <Variable x:TypeArguments="x:String" Name="ExpiratonSelection" />
@@ -112,6 +112,7 @@
             <Variable x:TypeArguments="x:String" Name="ClientName" />
             <Variable x:TypeArguments="x:String" Name="Warehouse" />
             <Variable x:TypeArguments="sd:DataTable" Name="ReportTable" />
+            <Variable x:TypeArguments="sd:DataTable" Name="ZeroTable" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -202,18 +203,10 @@
                 <ui:ReportStatus DisplayName="Report Order Processing Status" sap:VirtualizedContainerService.HintSize="514.666666666667,68" sap2010:WorkflowViewState.IdRef="ReportStatus_1" StatusText="[&quot;Zpracovávám formulář objednávky....&quot;]" />
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Process Raw Order workflow" sap:VirtualizedContainerService.HintSize="514.666666666667,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Components\Process Raw Order.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="InputFilePath" />
-                    </InArgument>
-                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_FilteredOrder">
-                      <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="FilteredOrder" />
-                    </OutArgument>
-                    <InArgument x:TypeArguments="njl:JObject" x:Key="in_config">
-                      <mva:VisualBasicValue x:TypeArguments="njl:JObject" ExpressionText="config" />
-                    </InArgument>
-                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ReportTabe">
-                      <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ReportTable" />
-                    </OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[InputFilePath]</InArgument>
+                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_FilteredOrder">[FilteredOrder]</OutArgument>
+                    <InArgument x:TypeArguments="njl:JObject" x:Key="in_config">[config]</InArgument>
+                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ReportTabe">[ReportTable]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[RowIndex]" DataTable="[FilteredOrder]" DisplayName="For Each Row check valid inputs" sap:VirtualizedContainerService.HintSize="514.666666666667,914" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
@@ -546,18 +539,10 @@
                         </ui:InvokeWorkflowFile>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Add Reporting Notes workflow" sap:VirtualizedContainerService.HintSize="526,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Components\Add Reporting Notes.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InOutArgument x:TypeArguments="sd:DataRow" x:Key="io_CurrentRow">
-                              <mva:VisualBasicReference x:TypeArguments="sd:DataRow" ExpressionText="CurrentRow" />
-                            </InOutArgument>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_NotesList">
-                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="NotesList" />
-                            </InArgument>
-                            <OutArgument x:TypeArguments="x:Int32" x:Key="out_NoteIndex">
-                              <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="NoteIndex" />
-                            </OutArgument>
-                            <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ReportTable">
-                              <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ReportTable" />
-                            </InOutArgument>
+                            <InOutArgument x:TypeArguments="sd:DataRow" x:Key="io_CurrentRow">[CurrentRow]</InOutArgument>
+                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_NotesList">[NotesList]</InArgument>
+                            <OutArgument x:TypeArguments="x:Int32" x:Key="out_NoteIndex">[NoteIndex]</OutArgument>
+                            <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ReportTable">[ReportTable]</InOutArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                         <If sap2010:Annotation.AnnotationText="If variant exact match is found, no Subtable is instantiated, only if there no match (and with or without replacement)" Condition="[Subtable isnot Nothing]" DisplayName="If Subtable Exists" sap:VirtualizedContainerService.HintSize="526,714" sap2010:WorkflowViewState.IdRef="If_4">
@@ -591,18 +576,10 @@
                                     </ui:InvokeWorkflowFile>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Add Reporting Notes workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Components\Add Reporting Notes.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="io_CurrentRow">
-                                          <mva:VisualBasicReference x:TypeArguments="sd:DataRow" ExpressionText="SubRow" />
-                                        </InOutArgument>
-                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_NotesList">
-                                          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="NotesList" />
-                                        </InArgument>
-                                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_NoteIndex">
-                                          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="NoteIndex" />
-                                        </OutArgument>
-                                        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ReportTable">
-                                          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ReportTable" />
-                                        </InOutArgument>
+                                        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="io_CurrentRow">[SubRow]</InOutArgument>
+                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_NotesList">[NotesList]</InArgument>
+                                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_NoteIndex">[NoteIndex]</OutArgument>
+                                        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ReportTable">[ReportTable]</InOutArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                   </Sequence>
@@ -887,8 +864,118 @@
               </ui:ForEachRow.Body>
             </ui:ForEachRow>
           </Sequence>
+          <Assign DisplayName="Init Zero Table" sap:VirtualizedContainerService.HintSize="682.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_20">
+            <Assign.To>
+              <OutArgument x:TypeArguments="sd:DataTable">[ZeroTable]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="sd:DataTable">[ReportTable.Clone()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Sequence DisplayName="Separate Zero Inventory" sap:VirtualizedContainerService.HintSize="682.666666666667,686.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_46">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <TryCatch DisplayName="Try to Select Zero rows" sap:VirtualizedContainerService.HintSize="438.666666666667,594.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+              <TryCatch.Try>
+                <Sequence DisplayName="Select and Filter" sap:VirtualizedContainerService.HintSize="376,356.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Add Zero rows to datatable" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_21">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="sd:DataTable">[ZeroTable]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="sd:DataTable">[ReportTable.Select("[Počet]='0'").CopyToDataTable()]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:FilterDataTable DataTable="[ReportTable]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334,162.666666666667" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[ReportTable]" SelectColumnsMode="Keep">
+                    <ui:FilterDataTable.Filters>
+                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                        <ui:FilterOperationArgument BooleanOperator="And" Operator="NOTEQ">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["Počet"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:String">["0"]</InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
+                      </scg:List>
+                    </ui:FilterDataTable.Filters>
+                    <ui:FilterDataTable.SelectColumns>
+                      <scg:List x:TypeArguments="InArgument" Capacity="4">
+                        <x:Null />
+                      </scg:List>
+                    </ui:FilterDataTable.SelectColumns>
+                  </ui:FilterDataTable>
+                </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;No zero inventory&quot;]" />
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+          </Sequence>
           <ui:OutputDataTable DataTable="[ReportTable]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="682.666666666667,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[RecapText]" />
-          <ui:WriteCsvFile AddHeaders="True" DataTable="[ReportTable]" Delimitator="Comma" DisplayName="Write CSV" Encoding="UTF-8" FilePath="[config(&quot;outputFilePath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="682.666666666667,156.666666666667" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
+          <Sequence DisplayName="Save report" sap:VirtualizedContainerService.HintSize="682.666666666667,648" sap2010:WorkflowViewState.IdRef="Sequence_49">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="SaveFilePath" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Assign Save path" sap:VirtualizedContainerService.HintSize="484,62" sap2010:WorkflowViewState.IdRef="Assign_22">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[SaveFilePath]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[path.Combine(path.GetDirectoryName(InputFilePath), "Report_" &amp; Today.ToString("yyyy-MM-dd") &amp; ".xlsx")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:WriteRange AddHeaders="True" DataTable="[ReportTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="484,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Přehled" StartingCell="A1" WorkbookPath="[SaveFilePath]" />
+            <If Condition="[ZeroTable.Rows.Count &gt; 0]" DisplayName="If Zero table exists" sap:VirtualizedContainerService.HintSize="484,299.333333333333" sap2010:WorkflowViewState.IdRef="If_11">
+              <If.Then>
+                <ui:WriteRange AddHeaders="True" DataTable="[ZeroTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Není_skladem" StartingCell="A1" WorkbookPath="[SaveFilePath]" />
+              </If.Then>
+            </If>
+          </Sequence>
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="682.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,248.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:WriteCsvFile AddHeaders="True" DataTable="[ReportTable]" Delimitator="Comma" DisplayName="Write ReportTable to CSV" Encoding="UTF-8" FilePath="Data\output.csv" sap:VirtualizedContainerService.HintSize="334,156.666666666667" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
+              </Sequence>
+            </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CommentOut>
           <Sequence DisplayName="Save and Create Reservation" sap:VirtualizedContainerService.HintSize="682.666666666667,422" sap2010:WorkflowViewState.IdRef="Sequence_29">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -907,7 +994,7 @@
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </Sequence>
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="682.666666666667,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[RecapText + vbCrLf + &quot;End&quot;]" />
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="682.666666666667,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;End&quot;]" />
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>

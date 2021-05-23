@@ -8,4 +8,4 @@
 "priceColumn2":"Price Total",
 "orderColumn":"Order",
 "MinimumQuantityColumn":"DU",
-"outputFilePath":"DATA\\output.csv"}
+"outputFilePath":"report.xlsx"}

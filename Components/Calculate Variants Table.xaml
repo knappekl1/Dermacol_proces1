@@ -204,7 +204,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For i=1 To n" sap:VirtualizedContainerService.HintSize="340.666666666667,354.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Enumerable.Range(1,2)]">
+      <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For i=1 To n" sap:VirtualizedContainerService.HintSize="654,354.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Enumerable.Range(1,2)]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:Int32">
             <ActivityAction.Argument>
@@ -224,7 +224,7 @@
                   <OutArgument x:TypeArguments="x:String">[NewVariant]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[in_shortCode + Chr(Asc(CompareList.LastOrDefault.Substring(CompareList.LastOrDefault.Length-1)) +i)]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_shortCode + Chr(Asc(CompareList.LastOrDefault.Substring(CompareList.LastOrDefault.Length-1)) +1)]</InArgument>
                 </Assign.Value>
               </Assign>
               <AddToCollection x:TypeArguments="x:String" Collection="[CompareList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_4" Item="[NewVariant]" />
