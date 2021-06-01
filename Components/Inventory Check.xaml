@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2124,3426</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2124,3956.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Inventory_Check_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -43,7 +43,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="50">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -79,19 +79,19 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Inventory_Check" sap:VirtualizedContainerService.HintSize="880,3361.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Inventory_Check" sap:VirtualizedContainerService.HintSize="880,3892" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Rozpady stavu skladu" sap:VirtualizedContainerService.HintSize="838,3269.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Rozpady stavu skladu" sap:VirtualizedContainerService.HintSize="838,3800" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Find Expiration Dates" sap:VirtualizedContainerService.HintSize="804,2934.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Find Expiration Dates" sap:VirtualizedContainerService.HintSize="804,3465.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:UiElement" Name="TableElements" />
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="RowElements" />
@@ -161,13 +161,13 @@
                 <InArgument x:TypeArguments="x:String">[string.Empty]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="762,1634.66666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[RowElements]">
+            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="762,1633.33333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[RowElements]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ui:UiElement">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:UiElement" Name="item" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="725.333333333333,1496.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="725.333333333333,1495.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="Cells" />
                     </Sequence.Variables>
@@ -178,7 +178,7 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <If Condition="[item.Selector.Text.Contains(&quot;role='row'&quot;)]" sap:VirtualizedContainerService.HintSize="683.333333333333,1402" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="646.666666666667,1218" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <Sequence DisplayName="Process rows" sap:VirtualizedContainerService.HintSize="646.666666666667,1218" sap2010:WorkflowViewState.IdRef="Sequence_12">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -198,7 +198,7 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[i]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="562.666666666667,936" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[TargetSelectors]">
+                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[i]" DisplayName="For Each Selector" sap:VirtualizedContainerService.HintSize="562.666666666667,936" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[TargetSelectors]">
                               <ui:ForEach.Body>
                                 <ActivityAction x:TypeArguments="x:String">
                                   <ActivityAction.Argument>
@@ -244,7 +244,7 @@
                                               <OutArgument x:TypeArguments="x:String">[Notes]</OutArgument>
                                             </Assign.To>
                                             <Assign.Value>
-                                              <InArgument x:TypeArguments="x:String">[Notes + Comments(i) + OutputText + ", "]</InArgument>
+                                              <InArgument x:TypeArguments="x:String">[Notes + Comments(i) + OutputText + ";"]</InArgument>
                                             </Assign.Value>
                                           </Assign>
                                         </Sequence>
@@ -400,6 +400,49 @@
                 </ActivityAction>
               </ui:ForEach.Body>
             </ui:ForEach>
+            <Sequence sap2010:Annotation.AnnotationText="Remove duplicates in notes string" DisplayName="Process notes" sap:VirtualizedContainerService.HintSize="762,492" sap2010:WorkflowViewState.IdRef="Sequence_18">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="s:String[]" Name="notesArray" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="Create Array from Notes" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_11">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:String[]">[notesArray]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:String[]">[Notes.Split(";"c)]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Trim strings" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_12">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:String[]">[notesArray]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:String[]">[notesArray.Select(Function(s) s.Trim).ToArray]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Remove duplicates" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_13">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:String[]">[notesArray]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:String[]">[notesArray.Distinct().ToArray()]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Join notes Array" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_14">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[Notes]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[string.Join("; ", notesArray)]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
             <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="762,159.333333333333" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InUiElement="[TableElements]" Shortcuts="[d(hk)][k(esc)][u(hk)]" />
             <Assign DisplayName="Assign value to out_argument" sap:VirtualizedContainerService.HintSize="762,62" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
