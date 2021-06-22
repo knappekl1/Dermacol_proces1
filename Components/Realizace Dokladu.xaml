@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Realizace_Dokladu" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="2124,2070.66666666667" sap2010:WorkflowViewState.IdRef="Realizace_Dokladu_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Realizace_Dokladu" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="2124,2168" sap2010:WorkflowViewState.IdRef="Realizace_Dokladu_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
@@ -63,19 +63,19 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Realizace_Dokladu" sap:VirtualizedContainerService.HintSize="552,2006" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Realizace_Dokladu" sap:VirtualizedContainerService.HintSize="556.666666666667,2103.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Poptávky zákazníka-DE Export: ACEX21/000093" sap:VirtualizedContainerService.HintSize="510,1914" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Poptávky zákazníka-DE Export: ACEX21/000093" sap:VirtualizedContainerService.HintSize="514.666666666667,2011.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1619.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="480.666666666667,1676.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:UiElement" Name="RealizaceDokladu" />
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="Elements" />
@@ -85,7 +85,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Realizace dokladu'" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" Timeout="3">
+            <uix:NClick ClickType="Single" DisplayName="Click 'Realizace dokladu'" sap:VirtualizedContainerService.HintSize="438.666666666667,168" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" Timeout="3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="1524, 191, 45, 45" ElementType="Button" FriendlyName="'Realizace dokladu'" FullSelectorArgument="&lt;wnd ctrlname='Toolbars_Dock_Area_Top' /&gt;&lt;ctrl name='DockTop' role='grouping' /&gt;&lt;ctrl name='Toolbar' role='tool bar' /&gt;&lt;ctrl name='Realizace dokladu' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Toolbars_Dock_Area_Top' /&gt;&lt;ctrl name='DockTop' role='grouping' /&gt;&lt;ctrl name='Toolbar' role='tool bar' /&gt;&lt;ctrl name='Realizace dokladu' role='push button' automationid='' check:text='Realizace dokladu' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADEAAAAxCAYAAABznEEcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAePSURBVGhD7Zf5W1TXGcfvP5Oa2MQEkUXAkUXNk6Q/9Jc0xtQofWLSaNgDIiIiIoi2SZEkbdhkMQawsm9hE9lhhm3YZxiGZdh3BNE07bfvOcOlw3ASQ4Y+j9OnP3zuzA/vOef9nOW990iPvwesHWnt6b9g7UirT/4Ja0d6RA9rR1pZ/wHWjrT8+AdYO8+dRHX7KD7PbNokpbgTw9OPhLEy0tLaP2AJ8ytPMTy1gv7RBXTr5/ivYXYVi6vfC+OfxY079Xjhd7F48fdfY8+7X+KYTyraNNPCWBmJDWYJuoklfHW/CR/F5OG35+/iTFQuMiu6ML24hoVHT4Vtfgom8dLJeLhcaYCtTy6XaB2YEsbKWCyhn1xGWlEr3r+ag1c8k6DwvwffLyqRRSJD44u0Uk+E7X6MmDt12HsqCe5/6oJ9YOnPk2CzZQmT82tQ9o7hQsJDvHY2E44hlXAPLsDpyFyUNQ9CP2EUEbUVEZO+XULVPymMlZHYnraE2aV1jEwtISqtFjYfpkER2YzDEfXwuFiMP0TlI6NMjan5VcwtPxG2N0ckoSQJUayMNEcPS5il5KYXHyMhvxVvBWfB9UoNFNeUcI1s4iviE1eJzHI1tGMLmCFhUR+mXDeX8E5FS9+kMFZGYknsBkX1A/CP+w5uF4pIogXHbg3yw+l+vgCnruaipFGLQYNRRNReJppW1FTiKEk0900IY2Uk1ulu0K6ZQHJhK44GZcM5rBavf6HH0VgNXK82wSOkCJ7X8nD3u06Mz67wlRP1wZAl3G7IEilo7p0QxsrsmgQ7wKVNWrwVlAUnOtxHb+lwLE5PM9oDBa2IW1A+fG5VIIO21sDoHKYW1oT9GCUS4Rqjht2nJVyiqWdcGCsjsVkxhb2o1LoZXtZ2gqp/Ark1/fhNwF04nS+Dx+daHInVkcwQPD4bgFNYHYmwqpWH4gYNNKPzXMR8/KjUGrz0fiIOR3fgQEDxpoR5nCnS1MJj6uw/tFFCH0Tn4U3/9B3xBnHEJw37z6TCMbgK7p9pSWQQHn8hSMjtZh8OhdMZCS7CKdpa35R2YGx6mZdo0/FlCUVUOw74GyUau8e3xJizTaKx28Ab/tozBTbe+T8fn3zs9y2EXWA5nCOUcPuzhsNkZBTRarjQihwOzIdXbDk/I/3Dc5iYW90cX5Y4FNkGW7+iDQnDlhzNkdhMmNLQZZRgCbneHNh1FNe74RBSC8WneTgZkcOrmizCxr+WQhInE2giVDwHlgvLyTxPU6RxamxKfdcYjlBDG+8CKGL6dp/rvXC5pobTxVpaEVZ+85BW3EaFgX04PuISL5KEU7iS58ByYTmZ52nKNok6NUl4kYRXAQ5F9/7XcAxthL1fIY75foO4zAboDHMYm1lBZMpD+oJNwMGwFp4Dy4XlZJ6nKRKzN6VOPcobvvZJPlwie3Yd58hu2iqdcLxQC5eAAhy/dB9J+UoMGeaNEreNEo6hzTwHo8TolhzNkQwz9MeEuk6jxKvn8uAU0bXrHLxMVSewGi7+eTgRnoO/V/agUzNFlWqFj2+UiKdz08Rz4BKUk3mepmyTqO0wSuw9nUozUbAzvIroMJbBPrgBB8PV23AIVcI+6CGc/XLx4c1SJOWpoNZOYXRqeXN8LvFePOwvNOLVs0YJlpNpjuZIbAZMaaRKcCLsHg5/nLQjFITzR8nY53mbDmQpHMM64HiZtg2D/jtcaqXyW00CeXgn7D6S81W0hRa4gOn4V5OrsYck7Ggi9n2cuyExsiXGHGmErpamaMcWUUPmFUr9jihv1iG9uAOv+92BLVUVh0ttBEu+A/YXVbDxq4Szby7eC89FVmU32gcmMUwXKvPxZYkDQfWbEjXtI9viTNkm8UvpH55FYV0/3gj4Fvu9CmEf2ka004w20+dDFZy8s3HmRgkSaQt1aCappC4J+4nYkLAliVf+mMMlHj5Lgs3GbtDSM0ZVRgU3n0w6G6Vcwi5EBVv/Khz0zsE7ofdIQInBsTkuIOqDEZG0IRFYtyFxG9Vtw8JYGYl1uBvkVPfAL7YETj7ZfOvYhdDLyreCr8BxOgPsYtTWP87v3aL2MuYSHhsSolgZiyVYUjo6oF/db8abgRn0AiuBDc3+Af9KWoFsfBBTjPicFi7A4kR9mHIl6cFWiU9u40GrXhgrI7EkLGGQrp29Q1O4nPgAL59Oxn5K3tavnG+ht2kLJZCAZmSWC4jam3OF+hFJiGJlJJ2BzeQvhx3omlYdAuIqsNczHfvOFdKWysG7l7PxbZkaql4DFxW1FSGSqFLphbEyFkt0UKlMym2h0pmNvScT4XA2g7ZQCd9Cqt5xaOnyI2r3Y4SLJJRDwlgZic2SJSjp1hWdUo0TlzLhfi4Zxy9mID67Bf36GS4gavNThCdUYc+Jv/Hi8PKZe1yikiREsTISG8gS+vSzaKJPZTZbpY1aGlDHV0AzMieMfxZM4oW3Y0nka/zq+JdcoqJFJ4yVkdhd93kiq6IbIX8t3+RGei29gwzCWBlpgGbM2pHY1dDa+d+QYAfT2pF6h2bojWvdSD30sHak1j4DrB0ps6QF1o7U1KGFtSOtr6/D2vm/xPPBOv4NaRNvuTrwinEAAAAASUVORK5CYII=" InformativeScreenshot="cd63125eec94cde727cb4904a042de4a.png" ScopeSelectorArgument="&lt;wnd app='noriswin32.exe' ctrlname='WDesktop' /&gt;&lt;wnd ctrlname='FormNew' /&gt;" SearchSteps="Selector, FuzzySelector">
                   <uix:TargetAnchorable.Anchors>
@@ -96,8 +96,8 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" sap2010:Annotation.AnnotationText="Find OK element on Realizace dokladu confirmation" DisplayName="Find Element OK Realizace Dokladu" FoundElement="[RealizaceDokladu]" sap:VirtualizedContainerService.HintSize="434,136.666666666667" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="438.666666666667,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" sap2010:Annotation.AnnotationText="Find OK element on Realizace dokladu confirmation" DisplayName="Find Element OK Realizace Dokladu" FoundElement="[RealizaceDokladu]" sap:VirtualizedContainerService.HintSize="438.666666666667,136.666666666667" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
               <ui:WaitUiElementAppear.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6824d290-434e-4c1c-83fb-0731be048076" InformativeScreenshot="77c9187261266576091e591cf7ed831f" Selector="&lt;wnd app='noriswin32.exe' ctrlname='WDesktop' /&gt;&lt;wnd ctrlname='FormNew' /&gt;&lt;wnd ctrlname='RegionStandard_002' /&gt;&lt;wnd ctrlname='Buttons' /&gt;&lt;wnd ctrlname='DataFormGridPanel' /&gt;&lt;wnd ctrlname='Buttons' /&gt;&lt;ctrl name='Buttons' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='cell' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -114,8 +114,8 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:WaitUiElementAppear>
-            <uix:NClick ClickType="Single" DisplayName="Click OK at Realizace Dokladu" sap:VirtualizedContainerService.HintSize="434,118.666666666667" sap2010:WorkflowViewState.IdRef="NClick_5" InUiElement="[RealizaceDokladu]" KeyModifiers="None" MouseButton="Left" />
-            <TryCatch DisplayName="Try to skip warning" sap:VirtualizedContainerService.HintSize="434,277.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <uix:NClick ClickType="Single" DisplayName="Click OK at Realizace Dokladu" sap:VirtualizedContainerService.HintSize="438.666666666667,118.666666666667" sap2010:WorkflowViewState.IdRef="NClick_5" InUiElement="[RealizaceDokladu]" KeyModifiers="None" MouseButton="Left" />
+            <TryCatch DisplayName="Try to skip warning" sap:VirtualizedContainerService.HintSize="438.666666666667,277.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
               <TryCatch.Variables>
                 <Variable x:TypeArguments="ui:UiElement" Name="OKelement" />
               </TryCatch.Variables>
@@ -154,7 +154,7 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,602" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438.666666666667,659.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
                 <Sequence sap:VirtualizedContainerService.HintSize="376,421.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
@@ -165,8 +165,8 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
-                  <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element Realizace dokladu warning popup" FoundElement="[OKelement]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
+                  <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                  <ui:WaitUiElementAppear WaitVisible="{x:Null}" DisplayName="Find Element Realizace dokladu warning popup" FoundElement="[OKelement]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1" WaitActive="True">
                     <ui:WaitUiElementAppear.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a0f336d4-d0ce-4d96-8dbf-623de3260606" InformativeScreenshot="2ec998c3015d5630ab7ca201ab06ecf9" Selector="&lt;wnd ctrlname='RegionStandard_002' /&gt;&lt;wnd ctrlname='dfColumns_1' /&gt;&lt;wnd ctrlname='DataFormGridPanel' /&gt;&lt;wnd ctrlname='dfColumns_1' /&gt;&lt;ctrl name='Columns' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl idx='4' role='cell' /&gt;" TimeoutMS="3000">
                         <ui:Target.WaitForReady>
@@ -189,10 +189,10 @@
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,430" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
