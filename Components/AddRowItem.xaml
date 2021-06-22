@@ -392,7 +392,7 @@
                       <InArgument x:TypeArguments="x:Int32" x:Key="in_MinInventory">[MinInventory]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <maes:AddToDictionary x:TypeArguments="x:String, x:String" sap2010:Annotation.AnnotationText="Tohle teď nic nepřidává- nejde tam nic v out_note (disabled)" Dictionary="[io_notes]" DisplayName="Add to out_notes Dictionary" sap:VirtualizedContainerService.HintSize="397.333333333333,172.666666666667" sap2010:WorkflowViewState.IdRef="AddToDictionary`2_1" Key="Doznačení" Value="[FilledNote]">
+                  <maes:AddToDictionary x:TypeArguments="x:String, x:String" sap2010:Annotation.AnnotationText="" Dictionary="[io_notes]" DisplayName="Add to out_notes Dictionary" sap:VirtualizedContainerService.HintSize="397.333333333333,172.666666666667" sap2010:WorkflowViewState.IdRef="AddToDictionary`2_1" Key="Doznačení" Value="[FilledNote]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -421,7 +421,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="e" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Check EXP" sap:VirtualizedContainerService.HintSize="526,515.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <Sequence DisplayName="Check EXP" sap:VirtualizedContainerService.HintSize="526,555.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>

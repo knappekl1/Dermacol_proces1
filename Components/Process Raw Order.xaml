@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2124,4898</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2124,5495.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Process_Raw_Order_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
@@ -51,7 +51,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -82,9 +82,10 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Process_Raw_Order" sap:VirtualizedContainerService.HintSize="646.666666666667,4833.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Process_Raw_Order" sap:VirtualizedContainerService.HintSize="704,5430.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="OrderRaw" />
       <Variable x:TypeArguments="sd:DataTable" Name="OrderFiltered" />
@@ -96,7 +97,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap2010:Annotation.AnnotationText="Key word for first column of column names row from the order form. (in read from excel the column names are not correct and thus not imported)" DisplayName="Assign look-up word" sap:VirtualizedContainerService.HintSize="604.666666666667,140.666666666667" sap2010:WorkflowViewState.IdRef="Assign_6">
+    <Assign sap2010:Annotation.AnnotationText="Key word for first column of column names row from the order form. (in read from excel the column names are not correct and thus not imported)" DisplayName="Assign look-up word" sap:VirtualizedContainerService.HintSize="662,140.666666666667" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[KeyWord]</OutArgument>
       </Assign.To>
@@ -109,7 +110,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <Assign sap2010:Annotation.AnnotationText="Column Name for column containing the order quantity" sap:VirtualizedContainerService.HintSize="604.666666666667,107.333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign sap2010:Annotation.AnnotationText="Column Name for column containing the order quantity" sap:VirtualizedContainerService.HintSize="662,107.333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[OrderKeyWord]</OutArgument>
       </Assign.To>
@@ -122,8 +123,46 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[OrderRaw]" DisplayName="Read Order" sap:VirtualizedContainerService.HintSize="604.666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="All products" WorkbookPath="[in_FilePath]" />
-    <Sequence DisplayName="Process Datatable" sap:VirtualizedContainerService.HintSize="604.666666666667,4286.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <TryCatch DisplayName="Try to read Excel order" sap:VirtualizedContainerService.HintSize="662,684" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+      <TryCatch.Try>
+        <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[OrderRaw]" DisplayName="Read Order" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="All products" WorkbookPath="[in_FilePath]" />
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="628,512" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Prompt user and reopen Excel file" sap:VirtualizedContainerService.HintSize="622,441.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="Button" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MessageBox Buttons="OkCancel" Caption="Soubor používán" ChosenButton="[Button]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="580,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Soubor v Excelu je používán. Zavřete jej prosím a klikněte OK&quot;]" />
+              <If Condition="[Button.Equals(&quot;Ok&quot;)]" sap:VirtualizedContainerService.HintSize="580,250.666666666667" sap2010:WorkflowViewState.IdRef="If_3">
+                <If.Then>
+                  <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[OrderRaw]" DisplayName="Read Order- After Excel closed" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="All products" WorkbookPath="[in_FilePath]" />
+                </If.Then>
+                <If.Else>
+                  <Throw Exception="[New BusinessRuleException(&quot;No data to read&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                </If.Else>
+              </If>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <Sequence DisplayName="Process Datatable" sap:VirtualizedContainerService.HintSize="662,4286.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="s:Object[]" Name="ColNames" />
         <Variable x:TypeArguments="x:Int32" Name="i" />

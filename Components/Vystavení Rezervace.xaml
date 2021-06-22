@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2124,2205.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2124,4039.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Vystavení_Rezervace_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -44,7 +44,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="48">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="25">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -72,7 +72,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Vystavení_Rezervace" sap:VirtualizedContainerService.HintSize="594,2140.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Vystavení_Rezervace" sap:VirtualizedContainerService.HintSize="874,3974.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ReservationNumber" />
     </Sequence.Variables>
@@ -81,13 +81,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Rezervace - DE Brno: RZ00518873" sap:VirtualizedContainerService.HintSize="552,1348.66666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Rezervace - DE Brno: RZ00518873" sap:VirtualizedContainerService.HintSize="832,2160" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Create Reservation" sap:VirtualizedContainerService.HintSize="518,1054" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Create Reservation" sap:VirtualizedContainerService.HintSize="522.666666666667,1865.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:UiElement" Name="OKcell" />
               <Variable x:TypeArguments="ui:UiElement" Name="OKelement" />
@@ -97,7 +97,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Create reservation" sap:VirtualizedContainerService.HintSize="476,168" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick ClickType="Single" DisplayName="Click 'Create reservation" sap:VirtualizedContainerService.HintSize="480.666666666667,168" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="1379, 191, 45, 45" ElementType="Button" FriendlyName="'Vystavení návazné'" FullSelectorArgument="&lt;wnd ctrlname='Toolbars_Dock_Area_Top' /&gt;&lt;ctrl name='DockTop' role='grouping' /&gt;&lt;ctrl name='Toolbar' role='tool bar' /&gt;&lt;ctrl name='Vystavení návazné rezervace' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Toolbars_Dock_Area_Top' /&gt;&lt;ctrl name='DockTop' role='grouping' /&gt;&lt;ctrl name='Toolbar' role='tool bar' /&gt;&lt;ctrl name='Vystavení návazné rezervace' role='push button' automationid='' check:text='Vystavení návazné rezervace' /&gt;" ImageBase64="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" InformativeScreenshot="d42729ac17f2b21cc48df93144df669e.png" ScopeSelectorArgument="&lt;wnd app='noriswin32.exe' ctrlname='WDesktop' /&gt;&lt;wnd ctrlname='FormNew' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
                   <uix:TargetAnchorable.Anchors>
@@ -108,7 +108,7 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="476,277.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="480.666666666667,728" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
                 <Sequence DisplayName="Report Error and Stop" sap:VirtualizedContainerService.HintSize="376,490" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
@@ -152,10 +152,10 @@
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,105.333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -167,13 +167,13 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <Sequence DisplayName="Get number" sap:VirtualizedContainerService.HintSize="476,434" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Get number" sap:VirtualizedContainerService.HintSize="480.666666666667,794.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,277.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438.666666666667,638" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                 <TryCatch.Try>
                   <Sequence sap:VirtualizedContainerService.HintSize="376,400" sap2010:WorkflowViewState.IdRef="Sequence_9">
                     <sap:WorkflowViewStateService.ViewState>
@@ -198,10 +198,10 @@
                   </Sequence>
                 </TryCatch.Try>
                 <TryCatch.Catches>
-                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,105.333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -213,7 +213,7 @@
                   </Catch>
                 </TryCatch.Catches>
               </TryCatch>
-              <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+              <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="438.666666666667,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
             </Sequence>
           </Sequence>
         </ActivityAction>
@@ -222,33 +222,97 @@
         <uix:TargetApp Area="450, 99, 3354, 1956" FilePath="C:\ProgramData\Asseco Solutions\NorisWin32Clients\HELIOS\noriswin32.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAPnSURBVFhHxZZ5SBRhGMbNoowOgijKIzvMxA6KxLCIjNIOS6st1NIOSiOL8I8Os9LKsuiUELqocF3PXNPU3LzaTJHNTM1UtPXYVdvcvN37mG1eaZZxfDvA1f74wezzPd/zvsy8O9+YGQyG/woqjiaoSFHfI3KQKrpmYmv/wg9F1wwyYxG2RoGKFEnCHP+F8Tu6H1anBGv02nGYBwO8j6q5wfbkXsjAPBSoSAGbZ8W4GYC1aYer+W0f3TAfHdKzEbzUPpM18AviUEF4qqhfMpfpBe3Q20tc8ND3mLqBAWw5Horrn55HyDSKSeB7LSryAg3zjkgDFMtf+LZwG/J99QQx5mVjgc+KF75ipmdEG6DwzA4u/NzxdQXckciyp9fmxG5VUmvDaqBfI58c8fHJDZvYLSp6QQzLGHfdmZKoB53K3ulNfW0L9udfTCN1YlgNUDT0ttr55Z3PYBbFcEjY1fGsNj1Iq9eNLWgt3VQsqViHZVKgIh0IiK3LCtDpdeZ5LYItLqkH67DCTNanB1b+rTiAioC4/7ttAD8iiQwb+FtteHW0HALVOs346Kqk03bxXr30gr+BOMK/kgxZWA1giKDQqibermCHzeV4yLHAQH5EYqus3aZd0TnrZNHN57Nj3PWIbxCQdauCHQ7ZzHrGC4IgzDKaC1lOKX5NWAideZxtsruVnAtKrcqiTFrjvDnzhADzMXFK2deU0fyOBbUGNVDb1biY9eZ0HrbpTzhz/RuyRO936An9mISvvINLkvZIMB8T1ptT+TVdjUuMDcCp55MbwsPMf8Il9UB9TkuJh47Qm7PrMgMcE1lSzMfEOyeEBzWNDQBwW3jiYs9V3P1CbBOdBXGefferEs6qyIEUtFetccs4Vob5mEB2tqjYc8gjoKPSqSdEfY4/Nz9uez8SQgQVXo+VyDssv8l/WJLXHNAYniFAVlRlXChkM+sN+kGnTSa1OlYYaSzgnhlUKmj/slqpU1vcI8N+0yATgsyII7OssRoAKtKBojBg5KCZw+0jB++vjwiAxwKPB8ukg4pMYGBgcLBCTBwTd0thIGEwc8QlHu+/la/HMilQkaJXLZsa9uHBHWv2ZjVWjI4Ve5M2VBB9v1vVN03YI7bfmxuaBfqoHMe7eKcKyP/10j6NfMrl0sc3ydPT2PCINrAyZV/zq6Z3u+FFlCzM9V+W7N3G9IxIA/AqhvOCereTw+kFGuY1dQMEnJBwGDG9pGYdyL+aCB76HpM14JoeUFkkKXfFfHSKJBWu8C1gsgYcEnZ2Pq1NOw5fOJgHA7ywB76OhtWAsKfFvlPZMx1b+xdgL2RgaxSoOJqg4uhhMPsJ7uGJEEWcfFgAAAAASUVORK5CYII=" InformativeScreenshot="f376325344c5bdf44294b69ca81aac82.png" Selector="&lt;wnd app='noriswin32.exe' ctrlname='WDesktop'/&gt;&lt;wnd ctrlname='FormNew'/&gt;" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Rezervace - DE Brno: RZ00518879" sap:VirtualizedContainerService.HintSize="552,660" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Rezervace - DE Brno: RZ00518879" sap:VirtualizedContainerService.HintSize="832,1682.66666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,365.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Wait for Reservation appear and get text" sap:VirtualizedContainerService.HintSize="798,1388" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="Type" />
+              <Variable x:TypeArguments="x:Int32" Name="Pointer" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NGetText DisplayName="Get Reservation Number" sap:VirtualizedContainerService.HintSize="334,168" sap2010:WorkflowViewState.IdRef="NGetText_1">
-              <uix:NGetText.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="648, 311, 251, 27" ElementType="Cell" FriendlyName="'RZ00518878'" FullSelectorArgument="&lt;wnd ctrlname='MasterTabRegion' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;wnd ctrlname='DataFormGridPanel' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;ctrl name='MasterTable' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='Interní číslo:' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='MasterTabRegion' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;wnd ctrlname='DataFormGridPanel' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;ctrl name='MasterTable' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='Interní číslo:' role='cell' automationid='' /&gt;" InformativeScreenshot="d0afaf5ce799ea391514188a73a4348f.png" ScopeSelectorArgument="&lt;wnd app='noriswin32.exe' ctrlname='WDesktop' /&gt;&lt;wnd ctrlname='FormNew' /&gt;" SearchSteps="Selector, FuzzySelector">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="648, 281, 251, 27" ElementType="Cell" FriendlyName="'Rezervace'" FullSelectorArgument="&lt;wnd ctrlname='MasterTabRegion' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;wnd ctrlname='DataFormGridPanel' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;ctrl name='MasterTable' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='Typ:' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='MasterTabRegion' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;wnd ctrlname='DataFormGridPanel' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;ctrl name='MasterTable' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='Typ:' role='cell' automationid='' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NGetText.Target>
-              <uix:NGetText.Text>
-                <OutArgument x:TypeArguments="x:String">[out_ReservationNumber]</OutArgument>
-              </uix:NGetText.Text>
-            </uix:NGetText>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Reservation:&quot; + out_ReservationNumber]" />
+            <Assign DisplayName="Assign Pointer" sap:VirtualizedContainerService.HintSize="756,62" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[Pointer]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">0</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InterruptibleDoWhile DisplayName="Do While not Reservation" sap:VirtualizedContainerService.HintSize="756,593.333333333333" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+              <ui:InterruptibleDoWhile.Body>
+                <Sequence DisplayName="Check if Reservation appeared" sap:VirtualizedContainerService.HintSize="376,424" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NGetText DisplayName="Get Text from Type Field at Reservation" sap:VirtualizedContainerService.HintSize="334,168" sap2010:WorkflowViewState.IdRef="NGetText_2">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="236, 281, 251, 27" ElementType="Cell" FriendlyName="'Rezervace'" FullSelectorArgument="&lt;wnd ctrlname='MasterTabRegion' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;wnd ctrlname='DataFormGridPanel' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;ctrl name='MasterTable' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='Typ:' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='MasterTabRegion' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;wnd ctrlname='DataFormGridPanel' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;ctrl name='MasterTable' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='Typ:' role='cell' automationid='' /&gt;" InformativeScreenshot="96e19f536d43b63711f66a89c2e4efb1.png" ScopeSelectorArgument="&lt;wnd app='noriswin32.exe' ctrlname='WDesktop' /&gt;&lt;wnd ctrlname='FormNew' /&gt;" SearchSteps="Selector, FuzzySelector">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="839, 281, 221, 27" ElementType="Cell" FriendlyName="'Realizováno'" FullSelectorArgument="&lt;wnd ctrlname='MasterTabRegion' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;wnd ctrlname='DataFormGridPanel' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;ctrl name='MasterTable' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='Stav:' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='MasterTabRegion' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;wnd ctrlname='DataFormGridPanel' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;ctrl name='MasterTable' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='Stav:' role='cell' automationid='' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image" />
+                            <uix:Target DesignTimeRectangle="161, 191, 45, 45" ElementType="Button" FriendlyName="'Uložit (Shift+F2)'" FullSelectorArgument="&lt;wnd ctrlname='Toolbars_Dock_Area_Top' /&gt;&lt;ctrl name='DockTop' role='grouping' /&gt;&lt;ctrl name='Toolbar' role='tool bar' /&gt;&lt;ctrl name='Uložit (Shift+F2)' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Toolbars_Dock_Area_Top' /&gt;&lt;ctrl name='DockTop' role='grouping' /&gt;&lt;ctrl name='Toolbar' role='tool bar' /&gt;&lt;ctrl name='Uložit (Shift+F2)' role='push button' automationid='' check:text='Uložit (Shift+F2)' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <uix:NGetText.Text>
+                      <OutArgument x:TypeArguments="x:String">[Type]</OutArgument>
+                    </uix:NGetText.Text>
+                  </uix:NGetText>
+                  <Assign DisplayName="Increment pointer" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[Pointer]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[Pointer + 1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                </Sequence>
+              </ui:InterruptibleDoWhile.Body>
+              <ui:InterruptibleDoWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Not Type.toLower.Equals(&quot;rezervace&quot;) and Pointer &lt; 10" />
+              </ui:InterruptibleDoWhile.Condition>
+            </ui:InterruptibleDoWhile>
+            <If Condition="[Pointer &lt; 9]" DisplayName="If pointer not at max value" sap:VirtualizedContainerService.HintSize="756,559.333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence DisplayName="Read Reservation number" sap:VirtualizedContainerService.HintSize="376,396" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NGetText DisplayName="Get Reservation Number" sap:VirtualizedContainerService.HintSize="334,168" sap2010:WorkflowViewState.IdRef="NGetText_1">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="648, 311, 251, 27" ElementType="Cell" FriendlyName="'RZ00518878'" FullSelectorArgument="&lt;wnd ctrlname='MasterTabRegion' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;wnd ctrlname='DataFormGridPanel' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;ctrl name='MasterTable' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='Interní číslo:' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='MasterTabRegion' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;wnd ctrlname='DataFormGridPanel' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;ctrl name='MasterTable' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='Interní číslo:' role='cell' automationid='' /&gt;" InformativeScreenshot="d0afaf5ce799ea391514188a73a4348f.png" ScopeSelectorArgument="&lt;wnd app='noriswin32.exe' ctrlname='WDesktop' /&gt;&lt;wnd ctrlname='FormNew' /&gt;" SearchSteps="Selector, FuzzySelector">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="648, 281, 251, 27" ElementType="Cell" FriendlyName="'Rezervace'" FullSelectorArgument="&lt;wnd ctrlname='MasterTabRegion' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;wnd ctrlname='DataFormGridPanel' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;ctrl name='MasterTable' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='Typ:' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='MasterTabRegion' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;wnd ctrlname='DataFormGridPanel' /&gt;&lt;wnd ctrlname='MasterTable' /&gt;&lt;ctrl name='MasterTable' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='Typ:' role='cell' automationid='' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <uix:NGetText.Text>
+                      <OutArgument x:TypeArguments="x:String">[out_ReservationNumber]</OutArgument>
+                    </uix:NGetText.Text>
+                  </uix:NGetText>
+                  <ui:LogMessage DisplayName="Log Reservation number" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Reservation:&quot; + out_ReservationNumber]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Could not read reservation number&quot;]" />
+              </If.Else>
+            </If>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
