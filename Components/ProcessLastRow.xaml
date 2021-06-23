@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2124,10092.6666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2124,9558</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessLastRow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -86,7 +86,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessLastRow" sap:VirtualizedContainerService.HintSize="1606,10028" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ProcessLastRow" sap:VirtualizedContainerService.HintSize="1548.66666666667,9493.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Text" />
     </Sequence.Variables>
@@ -95,13 +95,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Poptávky zákazníka-DE Export: Nový záznam" sap:VirtualizedContainerService.HintSize="1564,9936" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Poptávky zákazníka-DE Export: Nový záznam" sap:VirtualizedContainerService.HintSize="1506.66666666667,9401.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1530,9641.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1472.66666666667,9066.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:UiElement" Name="Element" />
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="RowElements" />
@@ -120,7 +120,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1488,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1430.66666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_10">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,161.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_59">
                   <sap:WorkflowViewStateService.ViewState>
@@ -174,7 +174,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <Sequence DisplayName="Get Available Quantity" sap:VirtualizedContainerService.HintSize="1488,1158.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_45">
+            <Sequence DisplayName="Get Available Quantity" sap:VirtualizedContainerService.HintSize="1430.66666666667,1158.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_45">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -269,7 +269,7 @@
                 <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="438.666666666667,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;In Stock: &quot; + Text]" />
               </Sequence>
             </Sequence>
-            <Sequence DisplayName="Input Order" sap:VirtualizedContainerService.HintSize="1488,2014.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_46">
+            <Sequence DisplayName="Input Order" sap:VirtualizedContainerService.HintSize="1430.66666666667,2014.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_46">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -420,7 +420,7 @@
                 </If>
               </Sequence>
             </Sequence>
-            <TryCatch DisplayName="Try to Check Expiration popup Window" sap:VirtualizedContainerService.HintSize="1488,2369.33333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try to Check Expiration popup Window" sap:VirtualizedContainerService.HintSize="1430.66666666667,2369.33333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
                 <Sequence DisplayName="Check popUp Window" sap:VirtualizedContainerService.HintSize="602,2131.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <Sequence.Variables>
@@ -533,13 +533,13 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <Sequence DisplayName="Process Price" sap:VirtualizedContainerService.HintSize="1488,2966" sap2010:WorkflowViewState.IdRef="Sequence_49">
+            <Sequence DisplayName="Process Price" sap:VirtualizedContainerService.HintSize="1430.66666666667,2390" sap2010:WorkflowViewState.IdRef="Sequence_49">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="Assign Target Price" sap:VirtualizedContainerService.HintSize="1446,62" sap2010:WorkflowViewState.IdRef="Assign_34">
+              <Assign DisplayName="Assign Target Price" sap:VirtualizedContainerService.HintSize="1388.66666666667,62" sap2010:WorkflowViewState.IdRef="Assign_34">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[CellSelector]</OutArgument>
                 </Assign.To>
@@ -547,7 +547,7 @@
                   <InArgument x:TypeArguments="x:String">["&lt;ctrl name='Cena základ měna' role='cell' /&gt;"]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Assign DisplayName="Create Target Element Price" sap:VirtualizedContainerService.HintSize="1446,62" sap2010:WorkflowViewState.IdRef="Assign_35">
+              <Assign DisplayName="Create Target Element Price" sap:VirtualizedContainerService.HintSize="1388.66666666667,62" sap2010:WorkflowViewState.IdRef="Assign_35">
                 <Assign.To>
                   <OutArgument x:TypeArguments="ui:UiElement">[Element]</OutArgument>
                 </Assign.To>
@@ -555,7 +555,7 @@
                   <InArgument x:TypeArguments="ui:UiElement">[New UiElement(New Selector(in_Selector + CellSelector))]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Sequence DisplayName="Process Price Infromation" sap:VirtualizedContainerService.HintSize="1446,2667.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <Sequence DisplayName="Process Price Infromation" sap:VirtualizedContainerService.HintSize="1388.66666666667,2091.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_11">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="PriceHeliosCompare" />
                   <Variable x:TypeArguments="x:Decimal" Name="PriceOrderRound" />
@@ -569,12 +569,12 @@
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NGetText DisplayName="Get Text from Element Cena základ" sap:VirtualizedContainerService.HintSize="1404,118.666666666667" sap2010:WorkflowViewState.IdRef="NGetText_2" InUiElement="[Element]">
+                <uix:NGetText DisplayName="Get Text from Element Cena základ" sap:VirtualizedContainerService.HintSize="1346.66666666667,118.666666666667" sap2010:WorkflowViewState.IdRef="NGetText_2" InUiElement="[Element]">
                   <uix:NGetText.Text>
                     <OutArgument x:TypeArguments="x:String">[PriceHelios]</OutArgument>
                   </uix:NGetText.Text>
                 </uix:NGetText>
-                <Assign sap:VirtualizedContainerService.HintSize="1404,62" sap2010:WorkflowViewState.IdRef="Assign_5">
+                <Assign sap:VirtualizedContainerService.HintSize="1346.66666666667,62" sap2010:WorkflowViewState.IdRef="Assign_5">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[PriceHeliosCompare]</OutArgument>
                   </Assign.To>
@@ -582,7 +582,7 @@
                     <InArgument x:TypeArguments="x:String">[PriceHelios.Replace(",",".").Trim.Replace(" ","")]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign sap:VirtualizedContainerService.HintSize="1404,62" sap2010:WorkflowViewState.IdRef="Assign_10">
+                <Assign sap:VirtualizedContainerService.HintSize="1346.66666666667,62" sap2010:WorkflowViewState.IdRef="Assign_10">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[PriceOrderCompare]</OutArgument>
                   </Assign.To>
@@ -590,7 +590,7 @@
                     <InArgument x:TypeArguments="x:String">[in_Price.Replace(",",".").Trim.Replace(" ","")]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:MultipleAssign DisplayName="Convert prices" sap:VirtualizedContainerService.HintSize="1404,128" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                <ui:MultipleAssign DisplayName="Convert prices" sap:VirtualizedContainerService.HintSize="1346.66666666667,128" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                   <ui:MultipleAssign.AssignOperations>
                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -612,16 +612,16 @@
                     </scg:List>
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
-                <If Condition="[PriceHeliosRound &gt; 0]" DisplayName="If Helios Price is Zero" sap:VirtualizedContainerService.HintSize="1404,2043.33333333333" sap2010:WorkflowViewState.IdRef="If_23">
+                <If Condition="[PriceHeliosRound &gt; 0]" DisplayName="If Helios Price is Zero" sap:VirtualizedContainerService.HintSize="1346.66666666667,1466" sap2010:WorkflowViewState.IdRef="If_23">
                   <If.Then>
-                    <Sequence DisplayName="Process Existing Price" sap:VirtualizedContainerService.HintSize="918.666666666667,1880" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                    <Sequence DisplayName="Process Existing Price" sap:VirtualizedContainerService.HintSize="861.333333333333,1302.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_55">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <maes:AddToDictionary x:TypeArguments="x:String, x:String" Dictionary="[io_Notes]" DisplayName="Add Price to dictionary" sap:VirtualizedContainerService.HintSize="876.666666666667,142" sap2010:WorkflowViewState.IdRef="AddToDictionary`2_4" Key="Cena základ v měně" Value="[PriceHeliosRound.ToString]" />
-                      <Assign DisplayName="Assign rounding difference" sap:VirtualizedContainerService.HintSize="876.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_13">
+                      <maes:AddToDictionary x:TypeArguments="x:String, x:String" Dictionary="[io_Notes]" DisplayName="Add Price to dictionary" sap:VirtualizedContainerService.HintSize="819.333333333333,142" sap2010:WorkflowViewState.IdRef="AddToDictionary`2_4" Key="Cena základ v měně" Value="[PriceHeliosRound.ToString.Replace(&quot;.&quot;,&quot;,&quot;)]" />
+                      <Assign DisplayName="Assign rounding difference" sap:VirtualizedContainerService.HintSize="819.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_13">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Decimal">[AllowedDiff]</OutArgument>
                         </Assign.To>
@@ -629,9 +629,9 @@
                           <InArgument x:TypeArguments="x:Decimal">[Convert.ToDecimal(0.25)]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <If Condition="[PriceHeliosRound &lt; (PriceOrderRound - AllowedDiff/2) Or PriceHeliosRound &gt; (PriceOrderRound + AllowedDiff/2)]" DisplayName="If Helios Price and Excel price Differ" sap:VirtualizedContainerService.HintSize="876.666666666667,1502.66666666667" sap2010:WorkflowViewState.IdRef="If_5">
+                      <If Condition="[PriceHeliosRound &lt; (PriceOrderRound - AllowedDiff/2) Or PriceHeliosRound &gt; (PriceOrderRound + AllowedDiff/2)]" DisplayName="If Helios Price and Excel price Differ" sap:VirtualizedContainerService.HintSize="819.333333333333,924" sap2010:WorkflowViewState.IdRef="If_5">
                         <If.Then>
-                          <Sequence DisplayName="Change Rabat and Price" sap:VirtualizedContainerService.HintSize="496.666666666667,1339.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          <Sequence DisplayName="Change Rabat and Price" sap:VirtualizedContainerService.HintSize="439.333333333333,760.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_19">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="PriceNote" />
                             </Sequence.Variables>
@@ -641,7 +641,7 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="454.666666666667,223.333333333333" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="397.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_2">
                               <ui:CommentOut.Body>
                                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,144.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_26">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -701,12 +701,12 @@
                               </ui:CommentOut.Body>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:CommentOut>
-                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="454.666666666667,460.666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="397.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                               <ui:CommentOut.Body>
                                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="418,382" sap2010:WorkflowViewState.IdRef="Sequence_25">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -749,22 +749,22 @@
                               </ui:CommentOut.Body>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:CommentOut>
-                            <Assign DisplayName="Assign Notification message" sap:VirtualizedContainerService.HintSize="454.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_11">
+                            <Assign DisplayName="Assign Notification message" sap:VirtualizedContainerService.HintSize="397.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_11">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[PriceNote]</OutArgument>
                               </Assign.To>
                               <Assign.Value>
-                                <InArgument x:TypeArguments="x:String">[" Rozdíl ceny Helios: " + PriceHeliosRound.ToString + " vs excel objednávky " + PriceOrderRound.ToString + "; "]</InArgument>
+                                <InArgument x:TypeArguments="x:String">[" Rozdíl ceny Helios: " + PriceHeliosRound.ToString.Replace(".",",") + " vs excel objednávky " + PriceOrderRound.ToString.Replace(".",",") + "; "]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <maes:AddToDictionary x:TypeArguments="x:String, x:String" Dictionary="[io_Notes]" DisplayName="Add to dictionary" sap:VirtualizedContainerService.HintSize="454.666666666667,142" sap2010:WorkflowViewState.IdRef="AddToDictionary`2_3" Key="Rozdíl v ceně" Value="[PriceNote]" />
-                            <ui:LogMessage DisplayName="Log New Price Input" sap:VirtualizedContainerService.HintSize="454.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Price difference: &quot; + in_Price]" />
-                            <Assign sap:VirtualizedContainerService.HintSize="454.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_7">
+                            <maes:AddToDictionary x:TypeArguments="x:String, x:String" Dictionary="[io_Notes]" DisplayName="Add to dictionary" sap:VirtualizedContainerService.HintSize="397.333333333333,142" sap2010:WorkflowViewState.IdRef="AddToDictionary`2_3" Key="Rozdíl v ceně" Value="[PriceNote]" />
+                            <ui:LogMessage DisplayName="Log New Price Input" sap:VirtualizedContainerService.HintSize="397.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Price difference: &quot; + in_Price]" />
+                            <Assign sap:VirtualizedContainerService.HintSize="397.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_7">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Boolean">[PriceChange]</OutArgument>
                               </Assign.To>
@@ -781,13 +781,13 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Change price in Helios Table" sap:VirtualizedContainerService.HintSize="439.333333333333,1250.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                    <Sequence DisplayName="Change price in Helios Table" sap:VirtualizedContainerService.HintSize="439.333333333333,1252" sap2010:WorkflowViewState.IdRef="Sequence_56">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <maes:AddToDictionary x:TypeArguments="x:String, x:String" Dictionary="[io_Notes]" DisplayName="Add Alert price to dictionary" sap:VirtualizedContainerService.HintSize="397.333333333333,142" sap2010:WorkflowViewState.IdRef="AddToDictionary`2_13" Key="Cena základ v měně" Value="[PriceHeliosRound.ToString]" />
+                      <maes:AddToDictionary x:TypeArguments="x:String, x:String" Dictionary="[io_Notes]" DisplayName="Add Alert price to dictionary" sap:VirtualizedContainerService.HintSize="397.333333333333,142" sap2010:WorkflowViewState.IdRef="AddToDictionary`2_13" Key="Cena základ v měně" Value="[PriceHeliosRound.ToString.Replace(&quot;.&quot;,&quot;,&quot;)]" />
                       <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text to dummy value" sap:VirtualizedContainerService.HintSize="397.333333333333,96" sap2010:WorkflowViewState.IdRef="SetValue_7" Text="999">
                         <ui:SetValue.Target>
                           <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[Element]" Id="fc9eb620-df04-4efc-b2ed-b115d995b32b" TimeoutMS="3000">
@@ -798,7 +798,7 @@
                         </ui:SetValue.Target>
                       </ui:SetValue>
                       <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="397.333333333333,159.333333333333" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" InUiElement="[Element]" Shortcuts="[d(hk)][k(enter)][u(hk)]" />
-                      <Sequence DisplayName="Lock values" sap:VirtualizedContainerService.HintSize="397.333333333333,456.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                      <Sequence DisplayName="Lock values" sap:VirtualizedContainerService.HintSize="397.333333333333,458" sap2010:WorkflowViewState.IdRef="Sequence_54">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -828,7 +828,7 @@
                 </If>
               </Sequence>
             </Sequence>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1488,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1430.66666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_9">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="1082,1404" sap2010:WorkflowViewState.IdRef="Sequence_52">
                   <sap:WorkflowViewStateService.ViewState>
@@ -925,7 +925,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <Sequence DisplayName="Get Product Number" sap:VirtualizedContainerService.HintSize="1488,694" sap2010:WorkflowViewState.IdRef="Sequence_53">
+            <Sequence DisplayName="Get Product Number" sap:VirtualizedContainerService.HintSize="1430.66666666667,694" sap2010:WorkflowViewState.IdRef="Sequence_53">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
